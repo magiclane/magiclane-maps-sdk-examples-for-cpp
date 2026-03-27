@@ -1,0 +1,92 @@
+# This file specifies intentionally untracked files that Git should ignore
+# Files already tracked by Git are not affected
+# ------------------------------------------------------------------------
+
+# Visual Studio generated files
+# -----------------------------
+*.ib_pdb_index
+*.idb
+*.ilk
+*.iml
+*.pdb
+*.ipch
+*.tlog
+#*.sln
+*.suo
+*.opensdf
+*.sdf
+*.user
+#*.vcproj
+*vcproj.*.*.user
+*.VC.db
+*.VC.VC.opendb
+.vs/
+*.ncb
+*.pch
+mt.dep
+*.embed.manifest
+*.embed.manifest.res
+*.intermediate.manifest
+BuildLog.htm
+*.exp
+*.aps
+
+# Directories to ignore
+# ---------------------
+/SDK
+
+# Build folders & files
+# ---------------------
+/BUILD*
+CMakeLists.txt.user
+local.properties
+/obj
+/android-*
+*.*.bak
+*~
+#*.a
+#*.so
+*.core
+*.moc
+*.o
+*.obj
+*.orig
+*.rej
+*_pch.h.cpp
+*_resource.rc
+*.qm
+.#*
+*.*#
+core
+!core/
+tags
+.DS_Store
+*.debug
+Makefile*
+*.prl
+*.app
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+Thumbs.db
+.directory
+*.xcworkspacedata
+*/xcschememanagement.plist
+xcschememanagement.plist
+Paths.xcconfig
+*.plist
+*/*.iml
+*.xcuserstate
+
+# Data
+# ----
+.rcc
+.pch
+xcuserdata
+DerivedData
+
+# Binaries
+# --------
+*.exe
+*.dll
+*.lib

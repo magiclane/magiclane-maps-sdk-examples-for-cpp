@@ -1,0 +1,24 @@
+version = 1
+
+SPDX-PackageName = "maps-sdk-examples-for-cpp"
+SPDX-PackageSupplier = "magiclane-developer@users.noreply.github.com"
+SPDX-PackageDownloadLocation = "https://github.com/magiclane/magiclane-maps-sdk-examples-for-cpp"
+SPDX-PackageComment = "Real-world use cases for the Magic Lane Maps SDK for Cpp to support faster app development and feature exploration."
+
+[[annotations]]
+path = "**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2021-2026 Magic Lane International B.V. <info@magiclane.com>"
+SPDX-License-Identifier = "Apache-2.0"
+
+[[annotations]]
+path = "Examples/go_regular_ttf.h"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2016 Bigelow & Holmes Inc.. All rights reserved"
+SPDX-License-Identifier = "BSD-3-Clause"
+
+[[annotations]]
+path = "vcpkg_overlays/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Microsoft Corporation"
+SPDX-License-Identifier = "MIT"

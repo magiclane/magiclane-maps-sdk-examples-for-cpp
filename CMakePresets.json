@@ -1,0 +1,959 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 29,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "base-vcpkg",
+            "hidden": true,
+            "binaryDir": "${sourceDir}/BUILD/${presetName}",
+            "installDir": "${sourceDir}/INSTALL/${presetName}",
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": {
+                    "type": "FILEPATH",
+                    "value": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+                },
+                "API_TOKEN": "$env{API_TOKEN}",
+                "MAPS_SDK_DATA_PATH": "${sourceDir}/SDK/share",
+                "VCPKG_FEATURE_FLAGS": "versions",
+                "CMAKE_CONFIGURATION_TYPES": "Debug;Release;RelWithDebInfo"
+            }
+        },
+        {
+            "name": "base-sanitizer",
+            "hidden": true,
+            "inherits": "base-vcpkg",
+			"generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+            }
+        },
+        {
+            "name": "cppcheck",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_CXX_CPPCHECK": "cppcheck;--enable=warning;--inconclusive;--force;--inline-suppr"
+            }
+        },
+        {
+            "name": "clang-tidy",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_CXX_CLANG_TIDY": "clang-tidy;--header-filter=${sourceDir}/*;-checks=-*,modernize-use-nullptr;-extra-arg=-std=c++17"
+            }
+        },
+        {
+            "name": "cpplint",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_CXX_CPPLINT": "cpplint"
+            }
+        },
+        {
+            "name": "iwyu",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_CXX_INCLUDE_WHAT_YOU_USE": "iwyu;-Xiwyu;any;-Xiwyu;iwyu;-Xiwyu"
+            }
+        },
+        {
+            "name": "lwyu",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_LINK_WHAT_YOU_USE": true
+            }
+        },
+        {
+            "name": "base-analyze-ninja-debug",
+            "hidden": true,
+            "inherits": [
+                "base-vcpkg",
+                "cppcheck",
+                "clang-tidy",
+				"cpplint"
+            ],
+			"generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "linux-glfw-ninja-debug",
+            "description": "Build options for Linux 64-bit Debug build (+GLFW)",
+            "inherits": "base-vcpkg",
+			"generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "USE_GLFW": "ON",
+                "VCPKG_MANIFEST_FEATURES": "glfw"
+            },
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "linux-glfw-ninja-release",
+            "description": "Build options for Linux 64-bit Release build (+GLFW)",
+            "inherits": "base-vcpkg",
+			"generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "USE_GLFW": "ON",
+                "VCPKG_MANIFEST_FEATURES": "glfw"
+            },
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "linux-glfw-ninja-relwithdebinfo",
+            "description": "Build options for Linux 64-bit RelWithDebInfo build (+GLFW)",
+            "inherits": "base-vcpkg",
+			"generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "USE_GLFW": "ON",
+                "VCPKG_MANIFEST_FEATURES": "glfw"
+            },
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "linux-glfw-ninja-debug-analyze",
+            "description": "Build options for Linux 64-bit Debug build (+GLFW) using Cppcheck, Clang-Tidy and Cpplint",
+            "inherits": "base-analyze-ninja-debug",
+            "cacheVariables": {
+                "USE_GLFW": "ON",
+                "VCPKG_MANIFEST_FEATURES": "glfw"
+            },
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "linux-glfw-ninja-relwithdebinfo-address-sanitizer",
+            "description": "Build options for Linux 64-bit RelWithDebInfo build (+GLFW) with Address Sanitizer enabled",
+            "inherits": "base-sanitizer",
+            "cacheVariables": {
+                "USE_GLFW": "ON",
+                "USE_SANITIZER": "Address",
+                "VCPKG_MANIFEST_FEATURES": "glfw"
+            },
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "linux-glfw-ninja-relwithdebinfo-undefined-sanitizer",
+            "description": "Build options for Linux 64-bit RelWithDebInfo build (+GLFW) with Undefined Behaviour Sanitizer enabled",
+            "inherits": "base-sanitizer",
+            "cacheVariables": {
+                "USE_GLFW": "ON",
+                "USE_SANITIZER": "Undefined",
+                "VCPKG_MANIFEST_FEATURES": "glfw"
+            },
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "linux-glfw-ninja-relwithdebinfo-thread-sanitizer",
+            "description": "Build options for Linux 64-bit RelWithDebInfo build (+GLFW) with Thread Sanitizer enabled",
+            "inherits": "base-sanitizer",
+            "cacheVariables": {
+                "USE_GLFW": "ON",
+                "USE_SANITIZER": "Thread",
+                "VCPKG_MANIFEST_FEATURES": "glfw"
+            },
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "linux-sdl-ninja-debug",
+            "description": "Build options for Linux 64-bit Debug build (+SDL)",
+            "inherits": "base-vcpkg",
+			"generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "USE_GLFW": "OFF",
+                "VCPKG_MANIFEST_FEATURES": "sdl"
+            },
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "linux-sdl-ninja-release",
+            "description": "Build options for Linux 64-bit Release build (+SDL)",
+            "inherits": "base-vcpkg",
+			"generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "USE_GLFW": "OFF",
+                "VCPKG_MANIFEST_FEATURES": "sdl"
+            },
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "linux-sdl-ninja-relwithdebinfo",
+            "description": "Build options for Linux 64-bit RelWithDebInfo build (+SDL)",
+            "inherits": "base-vcpkg",
+			"generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "USE_GLFW": "OFF",
+                "VCPKG_MANIFEST_FEATURES": "sdl"
+            },
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-vs2019",
+            "description": "Build options for Windows 64-bit (+GLFW) with Visual Studio 16 2019 (requires full VS2019)",
+            "inherits": "base-vcpkg",
+            "generator": "Visual Studio 16 2019",
+            "architecture": {
+                "value": "x64",
+                "strategy": "set"
+            },
+            "cacheVariables": {
+                "USE_GLFW": "ON",
+                "VCPKG_MANIFEST_FEATURES": "glfw"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-vs2019-toolset",
+            "description": "Build options for Windows 64-bit (+GLFW) using v142 toolset via VS2022 (requires VS2022 + v142 build tools)",
+            "inherits": "base-vcpkg",
+            "generator": "Visual Studio 17 2022",
+            "toolset": "v142",
+            "architecture": {
+                "value": "x64",
+                "strategy": "set"
+            },
+            "cacheVariables": {
+                "USE_GLFW": "ON",
+                "VCPKG_MANIFEST_FEATURES": "glfw"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-vs2022",
+            "description": "Build options for Windows 64-bit (+GLFW) with Visual Studio 17 2022",
+            "inherits": "base-vcpkg",
+            "generator": "Visual Studio 17 2022",
+            "architecture": {
+                "value": "x64",
+                "strategy": "set"
+            },
+            "cacheVariables": {
+                "USE_GLFW": "ON",
+                "VCPKG_MANIFEST_FEATURES": "glfw"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-vs2022-address-sanitizer",
+            "description": "Build options for Windows 64-bit RelWithDebInfo build (+GLFW) with Address Sanitizer enabled",
+            "inherits": "base-sanitizer",
+			"generator": "Visual Studio 17 2022",
+            "architecture": {
+                "value": "x64",
+                "strategy": "set"
+            },
+            "cacheVariables": {
+                "USE_GLFW": "ON",
+                "USE_SANITIZER": "Address",
+                "VCPKG_MANIFEST_FEATURES": "glfw"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-sdl-vs2019",
+            "description": "Build options for Windows 64-bit (+SDL) with Visual Studio 16 2019 (requires full VS2019)",
+            "inherits": "base-vcpkg",
+            "generator": "Visual Studio 16 2019",
+            "architecture": {
+                "value": "x64",
+                "strategy": "set"
+            },
+            "cacheVariables": {
+                "USE_GLFW": "OFF",
+                "VCPKG_MANIFEST_FEATURES": "sdl"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-sdl-vs2019-toolset",
+            "description": "Build options for Windows 64-bit (+SDL) using v142 toolset via VS2022 (requires VS2022 + v142 build tools)",
+            "inherits": "base-vcpkg",
+            "generator": "Visual Studio 17 2022",
+            "toolset": "v142",
+            "architecture": {
+                "value": "x64",
+                "strategy": "set"
+            },
+            "cacheVariables": {
+                "USE_GLFW": "OFF",
+                "VCPKG_MANIFEST_FEATURES": "sdl"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-sdl-vs2022",
+            "description": "Build options for Windows 64-bit (+SDL) with Visual Studio 17 2022",
+            "inherits": "base-vcpkg",
+            "generator": "Visual Studio 17 2022",
+            "architecture": {
+                "value": "x64",
+                "strategy": "set"
+            },
+            "cacheVariables": {
+                "USE_GLFW": "OFF",
+                "VCPKG_MANIFEST_FEATURES": "sdl"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-sdl-ninja-debug",
+            "description": "Build options for Windows 64-bit Debug build (+SDL) with Ninja",
+            "inherits": "base-vcpkg",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "USE_GLFW": "OFF",
+                "VCPKG_MANIFEST_FEATURES": "sdl"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-sdl-ninja-release",
+            "description": "Build options for Windows 64-bit Release build (+SDL) with Ninja",
+            "inherits": "base-vcpkg",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "USE_GLFW": "OFF",
+                "VCPKG_MANIFEST_FEATURES": "sdl"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-sdl-ninja-relwithdebinfo",
+            "description": "Build options for Windows 64-bit RelWithDebInfo build (+SDL) with Ninja",
+            "inherits": "base-vcpkg",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "USE_GLFW": "OFF",
+                "VCPKG_MANIFEST_FEATURES": "sdl"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-ninja-debug",
+            "description": "Build options for Windows 64-bit Debug build (+GLFW) with Ninja",
+            "inherits": "base-vcpkg",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "USE_GLFW": "ON",
+                "VCPKG_MANIFEST_FEATURES": "glfw"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-ninja-release",
+            "description": "Build options for Windows 64-bit Release build (+GLFW) with Ninja",
+            "inherits": "base-vcpkg",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "USE_GLFW": "ON",
+                "VCPKG_MANIFEST_FEATURES": "glfw"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-ninja-relwithdebinfo",
+            "description": "Build options for Windows 64-bit RelWithDebInfo build (+GLFW) with Ninja",
+            "inherits": "base-vcpkg",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "USE_GLFW": "ON",
+                "VCPKG_MANIFEST_FEATURES": "glfw"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "linux-glfw-ninja-release-all",
+            "description": "Build linux-glfw-ninja-release config",
+            "configurePreset": "linux-glfw-ninja-release",
+			"configuration": "Release",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "linux-glfw-ninja-debug-all",
+            "description": "Build linux-glfw-ninja-debug config",
+            "configurePreset": "linux-glfw-ninja-debug",
+			"configuration": "Debug",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "linux-glfw-ninja-relwithdebinfo-all",
+            "description": "Build linux-glfw-ninja-relwithdebinfo config",
+            "configurePreset": "linux-glfw-ninja-relwithdebinfo",
+			"configuration": "RelWithDebInfo",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "linux-glfw-ninja-debug-analyze-all",
+            "description": "Build linux-glfw-ninja-debug-analyze config",
+            "configurePreset": "linux-glfw-ninja-debug-analyze",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "linux-glfw-ninja-relwithdebinfo-address-sanitizer-all",
+            "description": "Build linux-glfw-ninja-relwithdebinfo-address-sanitizer config",
+            "configurePreset": "linux-glfw-ninja-relwithdebinfo-address-sanitizer",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "linux-glfw-ninja-relwithdebinfo-undefined-sanitizer-all",
+            "description": "Build linux-glfw-ninja-relwithdebinfo-undefined-sanitizer config",
+            "configurePreset": "linux-glfw-ninja-relwithdebinfo-undefined-sanitizer",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "linux-glfw-ninja-relwithdebinfo-thread-sanitizer-all",
+            "description": "Build linux-glfw-ninja-relwithdebinfo-thread-sanitizer config",
+            "configurePreset": "linux-glfw-ninja-relwithdebinfo-thread-sanitizer",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "linux-sdl-ninja-release-all",
+            "description": "Build linux-sdl-ninja-release config",
+            "configurePreset": "linux-sdl-ninja-release",
+			"configuration": "Release",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "linux-sdl-ninja-debug-all",
+            "description": "Build linux-sdl-ninja-debug config",
+            "configurePreset": "linux-sdl-ninja-debug",
+			"configuration": "Debug",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "linux-sdl-ninja-relwithdebinfo-all",
+            "description": "Build linux-sdl-ninja-relwithdebinfo config",
+            "configurePreset": "linux-sdl-ninja-relwithdebinfo",
+			"configuration": "RelWithDebInfo",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-vs2019-debug-all",
+            "description": "Build windows-glfw-vs2019 Debug config",
+            "configurePreset": "windows-glfw-vs2019",
+			"configuration": "Debug",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-vs2019-release-all",
+            "description": "Build windows-glfw-vs2019 Release config",
+            "configurePreset": "windows-glfw-vs2019",
+			"configuration": "Release",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-vs2019-relwithdebinfo-all",
+            "description": "Build windows-glfw-vs2019 RelWithDebInfo config",
+            "configurePreset": "windows-glfw-vs2019",
+			"configuration": "RelWithDebInfo",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-vs2019-toolset-debug-all",
+            "description": "Build windows-glfw-vs2019-toolset Debug config",
+            "configurePreset": "windows-glfw-vs2019-toolset",
+			"configuration": "Debug",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-vs2019-toolset-release-all",
+            "description": "Build windows-glfw-vs2019-toolset Release config",
+            "configurePreset": "windows-glfw-vs2019-toolset",
+			"configuration": "Release",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-vs2019-toolset-relwithdebinfo-all",
+            "description": "Build windows-glfw-vs2019-toolset RelWithDebInfo config",
+            "configurePreset": "windows-glfw-vs2019-toolset",
+			"configuration": "RelWithDebInfo",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-vs2022-debug-all",
+            "description": "Build windows-glfw-vs2022 Debug config",
+            "configurePreset": "windows-glfw-vs2022",
+			"configuration": "Debug",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-vs2022-release-all",
+            "description": "Build windows-glfw-vs2022 Release config",
+            "configurePreset": "windows-glfw-vs2022",
+			"configuration": "Release",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-vs2022-relwithdebinfo-all",
+            "description": "Build windows-glfw-vs2022 RelWithDebInfo config",
+            "configurePreset": "windows-glfw-vs2022",
+			"configuration": "RelWithDebInfo",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-vs2022-address-sanitizer-all",
+            "description": "Build windows-glfw-vs2022-address-sanitizer config",
+            "configurePreset": "windows-glfw-vs2022-address-sanitizer",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-sdl-vs2019-debug-all",
+            "description": "Build windows-sdl-vs2019 Debug config",
+            "configurePreset": "windows-sdl-vs2019",
+			"configuration": "Debug",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-sdl-vs2019-release-all",
+            "description": "Build windows-sdl-vs2019 Release config",
+            "configurePreset": "windows-sdl-vs2019",
+			"configuration": "Release",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-sdl-vs2019-relwithdebinfo-all",
+            "description": "Build windows-sdl-vs2019 RelWithDebInfo config",
+            "configurePreset": "windows-sdl-vs2019",
+			"configuration": "RelWithDebInfo",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-sdl-vs2019-toolset-debug-all",
+            "description": "Build windows-sdl-vs2019-toolset Debug config",
+            "configurePreset": "windows-sdl-vs2019-toolset",
+			"configuration": "Debug",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-sdl-vs2019-toolset-release-all",
+            "description": "Build windows-sdl-vs2019-toolset Release config",
+            "configurePreset": "windows-sdl-vs2019-toolset",
+			"configuration": "Release",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-sdl-vs2019-toolset-relwithdebinfo-all",
+            "description": "Build windows-sdl-vs2019-toolset RelWithDebInfo config",
+            "configurePreset": "windows-sdl-vs2019-toolset",
+			"configuration": "RelWithDebInfo",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-sdl-vs2022-debug-all",
+            "description": "Build windows-sdl-vs2022 Debug config",
+            "configurePreset": "windows-sdl-vs2022",
+			"configuration": "Debug",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-sdl-vs2022-release-all",
+            "description": "Build windows-sdl-vs2022 Release config",
+            "configurePreset": "windows-sdl-vs2022",
+			"configuration": "Release",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-sdl-vs2022-relwithdebinfo-all",
+            "description": "Build windows-sdl-vs2022 RelWithDebInfo config",
+            "configurePreset": "windows-sdl-vs2022",
+			"configuration": "RelWithDebInfo",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-sdl-ninja-release-all",
+            "description": "Build windows-sdl-ninja-release config",
+            "configurePreset": "windows-sdl-ninja-release",
+			"configuration": "Release",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-sdl-ninja-debug-all",
+            "description": "Build windows-sdl-ninja-debug config",
+            "configurePreset": "windows-sdl-ninja-debug",
+			"configuration": "Debug",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-sdl-ninja-relwithdebinfo-all",
+            "description": "Build windows-sdl-ninja-relwithdebinfo config",
+            "configurePreset": "windows-sdl-ninja-relwithdebinfo",
+			"configuration": "RelWithDebInfo",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-ninja-release-all",
+            "description": "Build windows-glfw-ninja-release config",
+            "configurePreset": "windows-glfw-ninja-release",
+			"configuration": "Release",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-ninja-debug-all",
+            "description": "Build windows-glfw-ninja-debug config",
+            "configurePreset": "windows-glfw-ninja-debug",
+			"configuration": "Debug",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "windows-glfw-ninja-relwithdebinfo-all",
+            "description": "Build windows-glfw-ninja-relwithdebinfo config",
+            "configurePreset": "windows-glfw-ninja-relwithdebinfo",
+			"configuration": "RelWithDebInfo",
+            "targets": [
+                "AllExamples"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        }
+    ],
+    "testPresets": []
+}

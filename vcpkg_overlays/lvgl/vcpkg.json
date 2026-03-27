@@ -1,0 +1,11 @@
+{
+  "name": "lvgl",
+  "version": "9.5.0",
+  "description": "Light and Versatile Graphics Library",
+  "homepage": "https://github.com/lvgl/lvgl",
+  "license": "MIT",
+  "dependencies": [
+    { "name": "vcpkg-cmake", "host": true },
+    { "name": "vcpkg-cmake-config", "host": true }
+  ]
+}

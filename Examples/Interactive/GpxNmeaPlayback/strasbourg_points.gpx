@@ -1,0 +1,2215 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 2.2.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="48.518932999999997" minlon="7.727617000000000" maxlat="48.524650000000001" maxlon="7.740950000000000"/></metadata>                    
+<wpt lat="48.520633" lon="7.727617">
+  <name>0</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:22.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.727617</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520633</ogr:Field_2>
+    <ogr:Field_3>Speed: 35.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 6.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:22.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5206" lon="7.727833">
+  <name>-1</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:23.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.727833</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520600</ogr:Field_2>
+    <ogr:Field_3>Speed: 32.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 103.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:23.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520567" lon="7.728017">
+  <name>-2</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:24.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.728017</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520567</ogr:Field_2>
+    <ogr:Field_3>Speed: 38.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 105.3</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:24.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520533" lon="7.72825">
+  <name>-3</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:25.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.728250</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520533</ogr:Field_2>
+    <ogr:Field_3>Speed: 36.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 102.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:25.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520483" lon="7.728467">
+  <name>-4</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:26.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.728467</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520483</ogr:Field_2>
+    <ogr:Field_3>Speed: 39.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 109.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:26.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52045" lon="7.7287">
+  <name>-5</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:27.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.728700</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520450</ogr:Field_2>
+    <ogr:Field_3>Speed: 32.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 102.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:27.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520433" lon="7.728883">
+  <name>-6</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:28.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.728883</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520433</ogr:Field_2>
+    <ogr:Field_3>Speed: 33.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 97.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:28.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5204" lon="7.729083">
+  <name>-7</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:29.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.729083</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520400</ogr:Field_2>
+    <ogr:Field_3>Speed: 28.4 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 104.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:29.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520367" lon="7.72925">
+  <name>-8</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:30.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.729250</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520367</ogr:Field_2>
+    <ogr:Field_3>Speed: 30.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 106.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:30.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52035" lon="7.729433">
+  <name>-9</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:31.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.729433</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520350</ogr:Field_2>
+    <ogr:Field_3>Speed: 27.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 97.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:31.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520317" lon="7.7296">
+  <name>-10</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:32.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.729600</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520317</ogr:Field_2>
+    <ogr:Field_3>Speed: 28.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 106.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:32.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5203" lon="7.729767">
+  <name>-11</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:33.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.729767</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520300</ogr:Field_2>
+    <ogr:Field_3>Speed: 31.2 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 98.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:33.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520267" lon="7.72995">
+  <name>-12</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:34.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.729950</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520267</ogr:Field_2>
+    <ogr:Field_3>Speed: 33.1 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 105.3</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:34.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52025" lon="7.73015">
+  <name>-13</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:35.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.730150</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520250</ogr:Field_2>
+    <ogr:Field_3>Speed: 29.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 97.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:35.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520233" lon="7.730333">
+  <name>-14</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:36.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.730333</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520233</ogr:Field_2>
+    <ogr:Field_3>Speed: 31.9 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 97.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:36.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520217" lon="7.730517">
+  <name>-15</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:37.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.730517</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520217</ogr:Field_2>
+    <ogr:Field_3>Speed: 37.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 97.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:37.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520183" lon="7.73075">
+  <name>-16</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:38.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.730750</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520183</ogr:Field_2>
+    <ogr:Field_3>Speed: 35.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 102.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:38.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52015" lon="7.73095">
+  <name>-17</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:39.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.730950</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520150</ogr:Field_2>
+    <ogr:Field_3>Speed: 26.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 104.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:39.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520133" lon="7.731117">
+  <name>-18</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:40.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.731117</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520133</ogr:Field_2>
+    <ogr:Field_3>Speed: 26.4 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 98.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:40.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5201" lon="7.731267">
+  <name>-19</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:41.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.731267</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520100</ogr:Field_2>
+    <ogr:Field_3>Speed: 27.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 108.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:41.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520083" lon="7.731433">
+  <name>-20</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:42.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.731433</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520083</ogr:Field_2>
+    <ogr:Field_3>Speed: 30.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 98.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:42.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520067" lon="7.731617">
+  <name>-21</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:43.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.731617</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520067</ogr:Field_2>
+    <ogr:Field_3>Speed: 34.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 97.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:43.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520033" lon="7.731817">
+  <name>-22</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:44.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.731817</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520033</ogr:Field_2>
+    <ogr:Field_3>Speed: 30.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 104.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:44.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520017" lon="7.732">
+  <name>-23</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:45.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.732000</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520017</ogr:Field_2>
+    <ogr:Field_3>Speed: 32.2 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 97.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:45.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519983" lon="7.7322">
+  <name>-24</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:46.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.732200</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519983</ogr:Field_2>
+    <ogr:Field_3>Speed: 32.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 104.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:46.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519967" lon="7.732383">
+  <name>-25</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:47.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.732383</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519967</ogr:Field_2>
+    <ogr:Field_3>Speed: 31.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 97.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:47.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519933" lon="7.732567">
+  <name>-26</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:48.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.732567</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519933</ogr:Field_2>
+    <ogr:Field_3>Speed: 35.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 105.3</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:48.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5199" lon="7.732783">
+  <name>-27</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:49.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.732783</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519900</ogr:Field_2>
+    <ogr:Field_3>Speed: 33.1 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 103.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:49.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519867" lon="7.732983">
+  <name>-28</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:50.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.732983</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519867</ogr:Field_2>
+    <ogr:Field_3>Speed: 29.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 104.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:50.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519833" lon="7.73315">
+  <name>-29</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:51.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.733150</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519833</ogr:Field_2>
+    <ogr:Field_3>Speed: 28.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 106.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:51.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5198" lon="7.733317">
+  <name>-30</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:52.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.733317</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519800</ogr:Field_2>
+    <ogr:Field_3>Speed: 30.4 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 106.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:52.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519767" lon="7.733483">
+  <name>-31</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:53.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.733483</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519767</ogr:Field_2>
+    <ogr:Field_3>Speed: 27.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 106.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:53.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519733" lon="7.73365">
+  <name>-32</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:54.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.733650</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519733</ogr:Field_2>
+    <ogr:Field_3>Speed: 25.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 106.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:54.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5197" lon="7.7338">
+  <name>-33</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:55.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.733800</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519700</ogr:Field_2>
+    <ogr:Field_3>Speed: 32.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 108.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:55.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519667" lon="7.733983">
+  <name>-34</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:56.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.733983</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519667</ogr:Field_2>
+    <ogr:Field_3>Speed: 32.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 105.3</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:56.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519633" lon="7.734183">
+  <name>-35</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:57.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.734183</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519633</ogr:Field_2>
+    <ogr:Field_3>Speed: 39.2 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 104.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:57.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519583" lon="7.734417">
+  <name>-36</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:58.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.734417</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519583</ogr:Field_2>
+    <ogr:Field_3>Speed: 30.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 107.9</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:58.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519567" lon="7.734583">
+  <name>-37</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:08:59.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.734583</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519567</ogr:Field_2>
+    <ogr:Field_3>Speed: 29.1 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 98.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:08:59.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519533" lon="7.734767">
+  <name>-38</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:00.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.734767</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519533</ogr:Field_2>
+    <ogr:Field_3>Speed: 26.1 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 105.3</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:00.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5195" lon="7.734917">
+  <name>-39</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:01.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.734917</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519500</ogr:Field_2>
+    <ogr:Field_3>Speed: 29.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 108.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:01.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519467" lon="7.735083">
+  <name>-40</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:02.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.735083</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519467</ogr:Field_2>
+    <ogr:Field_3>Speed: 31.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 106.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:02.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519433" lon="7.735267">
+  <name>-41</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:03.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.735267</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519433</ogr:Field_2>
+    <ogr:Field_3>Speed: 31.2 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 105.3</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:03.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519383" lon="7.735433">
+  <name>-42</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:04.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.735433</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519383</ogr:Field_2>
+    <ogr:Field_3>Speed: 32.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 114.4</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:04.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519317" lon="7.735617">
+  <name>-43</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:05.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.735617</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519317</ogr:Field_2>
+    <ogr:Field_3>Speed: 33.1 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 118.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:05.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.51925" lon="7.735783">
+  <name>-44</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:06.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.735783</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519250</ogr:Field_2>
+    <ogr:Field_3>Speed: 31.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 121.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:06.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519183" lon="7.73595">
+  <name>-45</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:07.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.735950</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519183</ogr:Field_2>
+    <ogr:Field_3>Speed: 34.9 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 121.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:07.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519133" lon="7.73615">
+  <name>-46</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:08.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.736150</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519133</ogr:Field_2>
+    <ogr:Field_3>Speed: 30.2 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 110.7</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:08.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5191" lon="7.736317">
+  <name>-47</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:09.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.736317</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519100</ogr:Field_2>
+    <ogr:Field_3>Speed: 27.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 106.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:09.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.51905" lon="7.736483">
+  <name>-48</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:10.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.736483</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519050</ogr:Field_2>
+    <ogr:Field_3>Speed: 28.1 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 114.4</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:10.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519017" lon="7.736633">
+  <name>-49</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:11.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.736633</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519017</ogr:Field_2>
+    <ogr:Field_3>Speed: 34.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 108.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:11.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.518983" lon="7.73685">
+  <name>-50</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:12.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.736850</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.518983</ogr:Field_2>
+    <ogr:Field_3>Speed: 25.4 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 103.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:12.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.518967" lon="7.737">
+  <name>-51</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:13.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737000</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.518967</ogr:Field_2>
+    <ogr:Field_3>Speed: 30.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 99.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:13.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.51895" lon="7.737183">
+  <name>-52</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:14.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737183</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.518950</ogr:Field_2>
+    <ogr:Field_3>Speed: 28.1 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 97.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:14.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.51895" lon="7.73735">
+  <name>-53</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:15.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737350</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.518950</ogr:Field_2>
+    <ogr:Field_3>Speed: 32.1 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 90.0</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:15.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.518933" lon="7.737533">
+  <name>-54</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:16.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737533</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.518933</ogr:Field_2>
+    <ogr:Field_3>Speed: 24.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 97.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:16.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.51895" lon="7.737683">
+  <name>-55</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:17.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737683</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.518950</ogr:Field_2>
+    <ogr:Field_3>Speed: 28.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 80.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:17.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.51895" lon="7.737867">
+  <name>-56</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:18.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737867</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.518950</ogr:Field_2>
+    <ogr:Field_3>Speed: 27.2 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 90.0</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:18.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.51895" lon="7.738017">
+  <name>-57</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:19.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738017</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.518950</ogr:Field_2>
+    <ogr:Field_3>Speed: 28.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 90.0</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:19.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.518983" lon="7.738183">
+  <name>-58</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:20.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738183</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.518983</ogr:Field_2>
+    <ogr:Field_3>Speed: 25.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 73.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:20.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519" lon="7.73835">
+  <name>-59</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:21.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738350</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519000</ogr:Field_2>
+    <ogr:Field_3>Speed: 27.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 81.4</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:21.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519017" lon="7.7385">
+  <name>-60</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:22.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738500</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519017</ogr:Field_2>
+    <ogr:Field_3>Speed: 35.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 80.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:22.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519067" lon="7.738717">
+  <name>-61</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:23.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738717</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519067</ogr:Field_2>
+    <ogr:Field_3>Speed: 33.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 70.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:23.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519117" lon="7.7389">
+  <name>-62</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:24.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738900</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519117</ogr:Field_2>
+    <ogr:Field_3>Speed: 36.1 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 67.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:24.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519167" lon="7.7391">
+  <name>-63</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:25.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739100</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519167</ogr:Field_2>
+    <ogr:Field_3>Speed: 31.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 69.3</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:25.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519233" lon="7.739267">
+  <name>-64</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:26.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739267</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519233</ogr:Field_2>
+    <ogr:Field_3>Speed: 19.9 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 58.9</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:26.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519267" lon="7.739383">
+  <name>-65</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:27.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739383</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519267</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 66.7</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:27.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5193" lon="7.73945">
+  <name>-66</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:28.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739450</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519300</ogr:Field_2>
+    <ogr:Field_3>Speed: 18.4 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 53.0</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:28.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.51935" lon="7.73955">
+  <name>-67</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:29.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739550</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519350</ogr:Field_2>
+    <ogr:Field_3>Speed: 19.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 53.0</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:29.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5194" lon="7.73965">
+  <name>-68</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:30.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739650</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519400</ogr:Field_2>
+    <ogr:Field_3>Speed: 19.2 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 53.0</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:30.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519467" lon="7.739583">
+  <name>-69</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:31.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739583</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519467</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.2 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:31.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5195" lon="7.73955">
+  <name>-70</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:32.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739550</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519500</ogr:Field_2>
+    <ogr:Field_3>Speed: 16.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:32.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.51955" lon="7.739483">
+  <name>-71</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:33.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739483</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519550</ogr:Field_2>
+    <ogr:Field_3>Speed: 16.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 318.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:33.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519617" lon="7.739433">
+  <name>-72</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:34.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739433</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519617</ogr:Field_2>
+    <ogr:Field_3>Speed: 16.2 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 333.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:34.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519667" lon="7.739383">
+  <name>-73</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:35.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739383</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519667</ogr:Field_2>
+    <ogr:Field_3>Speed: 17.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:35.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519717" lon="7.739317">
+  <name>-74</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:36.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739317</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519717</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.9 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 318.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:36.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519767" lon="7.739267">
+  <name>-75</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:37.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739267</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519767</ogr:Field_2>
+    <ogr:Field_3>Speed: 20.1 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:37.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519833" lon="7.739183">
+  <name>-76</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:38.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739183</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519833</ogr:Field_2>
+    <ogr:Field_3>Speed: 17.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 320.4</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:38.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5199" lon="7.739133">
+  <name>-77</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:39.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739133</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519900</ogr:Field_2>
+    <ogr:Field_3>Speed: 18.9 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 333.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:39.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.519967" lon="7.739067">
+  <name>-78</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:40.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739067</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.519967</ogr:Field_2>
+    <ogr:Field_3>Speed: 19.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:40.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520017" lon="7.739">
+  <name>-79</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:41.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739000</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520017</ogr:Field_2>
+    <ogr:Field_3>Speed: 17.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 318.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:41.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520083" lon="7.738933">
+  <name>-80</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:42.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738933</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520083</ogr:Field_2>
+    <ogr:Field_3>Speed: 16.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:42.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520133" lon="7.738867">
+  <name>-81</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:43.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738867</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520133</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 318.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:43.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520183" lon="7.738817">
+  <name>-82</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:44.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738817</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520183</ogr:Field_2>
+    <ogr:Field_3>Speed: 21.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:44.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52025" lon="7.73875">
+  <name>-83</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:45.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738750</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520250</ogr:Field_2>
+    <ogr:Field_3>Speed: 16.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:45.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520317" lon="7.738683">
+  <name>-84</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:46.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738683</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520317</ogr:Field_2>
+    <ogr:Field_3>Speed: 14.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:46.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520367" lon="7.738633">
+  <name>-85</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:47.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738633</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520367</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:47.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520417" lon="7.738583">
+  <name>-86</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:48.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738583</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520417</ogr:Field_2>
+    <ogr:Field_3>Speed: 18.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:48.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520467" lon="7.738517">
+  <name>-87</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:49.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738517</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520467</ogr:Field_2>
+    <ogr:Field_3>Speed: 14.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 318.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:49.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520517" lon="7.738467">
+  <name>-88</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:50.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738467</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520517</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:50.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520567" lon="7.738417">
+  <name>-89</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:51.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738417</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520567</ogr:Field_2>
+    <ogr:Field_3>Speed: 16.9 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:51.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520633" lon="7.73835">
+  <name>-90</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:52.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738350</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520633</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:52.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520667" lon="7.7383">
+  <name>-91</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:53.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738300</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520667</ogr:Field_2>
+    <ogr:Field_3>Speed: 16.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 315.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:53.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520717" lon="7.73825">
+  <name>-92</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:54.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738250</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520717</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:54.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.520767" lon="7.7383">
+  <name>-93</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:55.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738300</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520767</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 33.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:55.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5208" lon="7.73835">
+  <name>-94</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:56.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738350</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520800</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.2 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 44.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:56.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52085" lon="7.738417">
+  <name>-95</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:57.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738417</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520850</ogr:Field_2>
+    <ogr:Field_3>Speed: 18.1 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 41.4</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:57.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5209" lon="7.738483">
+  <name>-96</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:58.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738483</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520900</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 41.4</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:58.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52095" lon="7.738533">
+  <name>-97</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:09:59.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738533</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.520950</ogr:Field_2>
+    <ogr:Field_3>Speed: 18.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 33.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:09:59.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521017" lon="7.738567">
+  <name>-98</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:00.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738567</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521017</ogr:Field_2>
+    <ogr:Field_3>Speed: 17.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 18.3</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:00.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521083" lon="7.738617">
+  <name>-99</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:01.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738617</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521083</ogr:Field_2>
+    <ogr:Field_3>Speed: 17.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 26.4</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:01.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52115" lon="7.73865">
+  <name>-100</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:02.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738650</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521150</ogr:Field_2>
+    <ogr:Field_3>Speed: 19.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 18.3</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:02.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521217" lon="7.738667">
+  <name>-101</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:03.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738667</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521217</ogr:Field_2>
+    <ogr:Field_3>Speed: 18.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 9.4</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:03.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5213" lon="7.738683">
+  <name>-102</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:04.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738683</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521300</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 7.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:04.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52135" lon="7.7387">
+  <name>-103</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:05.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738700</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521350</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 12.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:05.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521417" lon="7.738683">
+  <name>-104</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:06.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738683</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521417</ogr:Field_2>
+    <ogr:Field_3>Speed: 14.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 350.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:06.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521483" lon="7.738667">
+  <name>-105</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:07.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738667</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521483</ogr:Field_2>
+    <ogr:Field_3>Speed: 19.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 350.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:07.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52155" lon="7.73865">
+  <name>-106</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:08.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738650</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521550</ogr:Field_2>
+    <ogr:Field_3>Speed: 11.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 350.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:08.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521567" lon="7.738717">
+  <name>-107</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:09.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738717</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521567</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 69.3</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:09.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521583" lon="7.738783">
+  <name>-108</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:10.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738783</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521583</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.1 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 69.3</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:10.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5216" lon="7.73885">
+  <name>-109</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:11.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738850</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521600</ogr:Field_2>
+    <ogr:Field_3>Speed: 14.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 69.3</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:11.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521617" lon="7.738933">
+  <name>-110</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:12.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738933</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521617</ogr:Field_2>
+    <ogr:Field_3>Speed: 14.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 73.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:12.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521633" lon="7.739017">
+  <name>-111</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:13.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739017</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521633</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.9 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 73.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:13.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52165" lon="7.7391">
+  <name>-112</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:14.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739100</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521650</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 73.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:14.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521667" lon="7.739167">
+  <name>-113</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:15.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739167</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521667</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 69.3</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:15.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521683" lon="7.73925">
+  <name>-114</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:16.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739250</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521683</ogr:Field_2>
+    <ogr:Field_3>Speed: 14.4 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 73.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:16.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5217" lon="7.739333">
+  <name>-115</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:17.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739333</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521700</ogr:Field_2>
+    <ogr:Field_3>Speed: 16.9 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 73.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:17.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521717" lon="7.739417">
+  <name>-116</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:18.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739417</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521717</ogr:Field_2>
+    <ogr:Field_3>Speed: 16.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 73.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:18.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52175" lon="7.739517">
+  <name>-117</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:19.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739517</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521750</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 63.3</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:19.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521767" lon="7.739583">
+  <name>-118</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:20.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739583</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521767</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 69.3</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:20.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521783" lon="7.739683">
+  <name>-119</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:21.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739683</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521783</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.9 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 75.9</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:21.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5218" lon="7.739767">
+  <name>-120</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:22.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739767</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521800</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 73.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:22.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521817" lon="7.73985">
+  <name>-121</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:23.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739850</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521817</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.4 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 73.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:23.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521833" lon="7.739933">
+  <name>-122</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:24.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739933</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521833</ogr:Field_2>
+    <ogr:Field_3>Speed: 14.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 73.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:24.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52185" lon="7.740017">
+  <name>-123</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:25.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740017</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521850</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.1 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 73.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:25.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521867" lon="7.740117">
+  <name>-124</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:26.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740117</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521867</ogr:Field_2>
+    <ogr:Field_3>Speed: 17.4 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 75.9</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:26.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521883" lon="7.740217">
+  <name>-125</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:27.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740217</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521883</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 75.9</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:27.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521917" lon="7.7403">
+  <name>-126</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:28.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740300</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521917</ogr:Field_2>
+    <ogr:Field_3>Speed: 16.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 58.9</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:28.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521933" lon="7.7404">
+  <name>-127</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:29.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740400</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521933</ogr:Field_2>
+    <ogr:Field_3>Speed: 14.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 75.9</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:29.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52195" lon="7.740483">
+  <name>-128</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:30.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740483</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521950</ogr:Field_2>
+    <ogr:Field_3>Speed: 14.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 73.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:30.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521967" lon="7.740567">
+  <name>-129</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:31.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740567</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521967</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 73.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:31.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.521983" lon="7.74065">
+  <name>-130</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:32.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740650</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.521983</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.9 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 73.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:32.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.522" lon="7.740733">
+  <name>-131</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:33.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740733</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522000</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.2 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 73.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:33.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.522017" lon="7.7408">
+  <name>-132</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:34.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740800</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522017</ogr:Field_2>
+    <ogr:Field_3>Speed: 17.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 69.3</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:34.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.522033" lon="7.740917">
+  <name>-133</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:35.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740917</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522033</ogr:Field_2>
+    <ogr:Field_3>Speed: 9.1 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 77.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:35.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.522067" lon="7.74095">
+  <name>-134</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:36.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740950</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522067</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 33.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:36.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.522117" lon="7.740933">
+  <name>-135</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:37.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740933</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522117</ogr:Field_2>
+    <ogr:Field_3>Speed: 14.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 347.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:37.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.522167" lon="7.740917">
+  <name>-136</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:38.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740917</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522167</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 347.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:38.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.522233" lon="7.740883">
+  <name>-137</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:39.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740883</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522233</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 341.7</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:39.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.522283" lon="7.74085">
+  <name>-138</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:40.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740850</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522283</ogr:Field_2>
+    <ogr:Field_3>Speed: 17.4 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 336.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:40.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52235" lon="7.7408">
+  <name>-139</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:41.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740800</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522350</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 333.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:41.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5224" lon="7.740767">
+  <name>-140</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:42.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740767</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522400</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.9 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 336.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:42.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52245" lon="7.740733">
+  <name>-141</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:43.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740733</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522450</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.4 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 336.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:43.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5225" lon="7.740683">
+  <name>-142</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:44.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740683</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522500</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.2 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:44.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52255" lon="7.74065">
+  <name>-143</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:45.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740650</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522550</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 336.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:45.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5226" lon="7.7406">
+  <name>-144</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:46.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740600</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522600</ogr:Field_2>
+    <ogr:Field_3>Speed: 17.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:46.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52265" lon="7.74055">
+  <name>-145</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:47.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740550</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522650</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:47.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5227" lon="7.7405">
+  <name>-146</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:48.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740500</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522700</ogr:Field_2>
+    <ogr:Field_3>Speed: 16.2 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:48.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52275" lon="7.740433">
+  <name>-147</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:49.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740433</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522750</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 318.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:49.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5228" lon="7.740367">
+  <name>-148</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:50.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740367</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522800</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.2 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 318.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:50.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.522833" lon="7.740317">
+  <name>-149</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:51.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740317</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522833</ogr:Field_2>
+    <ogr:Field_3>Speed: 14.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 315.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:51.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.522883" lon="7.740267">
+  <name>-150</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:52.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740267</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522883</ogr:Field_2>
+    <ogr:Field_3>Speed: 16.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:52.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.522933" lon="7.7402">
+  <name>-151</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:53.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740200</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522933</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 318.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:53.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.522967" lon="7.740133">
+  <name>-152</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:54.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740133</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.522967</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.2 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 307.0</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:54.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523017" lon="7.740067">
+  <name>-153</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:55.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740067</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523017</ogr:Field_2>
+    <ogr:Field_3>Speed: 10.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 318.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:55.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52305" lon="7.740017">
+  <name>-154</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:56.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.740017</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523050</ogr:Field_2>
+    <ogr:Field_3>Speed: 11.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 315.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:56.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523067" lon="7.739967">
+  <name>-155</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:57.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739967</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523067</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 296.7</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:57.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523117" lon="7.7399">
+  <name>-156</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:58.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739900</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523117</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 318.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:58.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52315" lon="7.73985">
+  <name>-157</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:10:59.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739850</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523150</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.9 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 315.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:10:59.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523183" lon="7.739783">
+  <name>-158</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:00.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739783</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523183</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 307.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:00.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523217" lon="7.739717">
+  <name>-159</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:01.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739717</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523217</ogr:Field_2>
+    <ogr:Field_3>Speed: 16.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 307.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:01.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52325" lon="7.73965">
+  <name>-160</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:02.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739650</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523250</ogr:Field_2>
+    <ogr:Field_3>Speed: 14.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 307.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:02.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523283" lon="7.739567">
+  <name>-161</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:03.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739567</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523283</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.2 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 301.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:03.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523317" lon="7.7395">
+  <name>-162</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:04.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739500</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523317</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 307.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:04.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52335" lon="7.739433">
+  <name>-163</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:05.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739433</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523350</ogr:Field_2>
+    <ogr:Field_3>Speed: 17.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 307.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:05.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523383" lon="7.73935">
+  <name>-164</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:06.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739350</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523383</ogr:Field_2>
+    <ogr:Field_3>Speed: 16.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 301.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:06.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523417" lon="7.739267">
+  <name>-165</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:07.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739267</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523417</ogr:Field_2>
+    <ogr:Field_3>Speed: 16.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 301.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:07.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52345" lon="7.739183">
+  <name>-166</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:08.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739183</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523450</ogr:Field_2>
+    <ogr:Field_3>Speed: 14.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 301.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:08.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523483" lon="7.7391">
+  <name>-167</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:09.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739100</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523483</ogr:Field_2>
+    <ogr:Field_3>Speed: 14.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 301.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:09.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5235" lon="7.739017">
+  <name>-168</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:10.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.739017</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523500</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 286.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:10.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523517" lon="7.73895">
+  <name>-169</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:11.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738950</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523517</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.1 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 290.7</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:11.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52355" lon="7.738867">
+  <name>-170</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:12.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738867</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523550</ogr:Field_2>
+    <ogr:Field_3>Speed: 17.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 301.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:12.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523567" lon="7.738767">
+  <name>-171</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:13.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738767</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523567</ogr:Field_2>
+    <ogr:Field_3>Speed: 14.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 284.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:13.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523583" lon="7.738683">
+  <name>-172</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:14.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738683</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523583</ogr:Field_2>
+    <ogr:Field_3>Speed: 11.9 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 286.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:14.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5236" lon="7.738617">
+  <name>-173</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:15.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738617</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523600</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 290.7</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:15.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523617" lon="7.73855">
+  <name>-174</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:16.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738550</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523617</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 290.7</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:16.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523633" lon="7.738467">
+  <name>-175</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:17.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738467</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523633</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.1 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 286.8</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:17.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52365" lon="7.7384">
+  <name>-176</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:18.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738400</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523650</ogr:Field_2>
+    <ogr:Field_3>Speed: 11.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 290.7</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:18.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523667" lon="7.738333">
+  <name>-177</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:19.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738333</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523667</ogr:Field_2>
+    <ogr:Field_3>Speed: 11.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 290.7</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:19.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523683" lon="7.738267">
+  <name>-178</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:20.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738267</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523683</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 290.7</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:20.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5237" lon="7.7382">
+  <name>-179</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:21.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738200</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523700</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 290.7</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:21.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523717" lon="7.738133">
+  <name>-180</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:22.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738133</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523717</ogr:Field_2>
+    <ogr:Field_3>Speed: 14.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 290.7</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:22.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52375" lon="7.73805">
+  <name>-181</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:23.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738050</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523750</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 301.1</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:23.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523783" lon="7.738">
+  <name>-182</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:24.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.738000</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523783</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 315.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:24.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523817" lon="7.73795">
+  <name>-183</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:25.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737950</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523817</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 315.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:25.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.523867" lon="7.737883">
+  <name>-184</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:26.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737883</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523867</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 318.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:26.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.5239" lon="7.737833">
+  <name>-185</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:27.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737833</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523900</ogr:Field_2>
+    <ogr:Field_3>Speed: 14.6 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 315.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:27.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52395" lon="7.737783">
+  <name>-186</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:28.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737783</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.523950</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:28.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.524" lon="7.737733">
+  <name>-187</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:29.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737733</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.524000</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:29.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.524033" lon="7.7377">
+  <name>-188</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:30.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737700</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.524033</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 326.5</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:30.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.524083" lon="7.737667">
+  <name>-189</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:31.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737667</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.524083</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.7 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 336.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:31.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.524133" lon="7.73765">
+  <name>-190</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:32.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737650</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.524133</ogr:Field_2>
+    <ogr:Field_3>Speed: 14.4 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 347.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:32.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.524183" lon="7.737617">
+  <name>-191</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:33.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737617</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.524183</ogr:Field_2>
+    <ogr:Field_3>Speed: 16.5 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 336.2</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:33.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52425" lon="7.7376">
+  <name>-192</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:34.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737600</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.524250</ogr:Field_2>
+    <ogr:Field_3>Speed: 15.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 350.6</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:34.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.524317" lon="7.7376">
+  <name>-193</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:35.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737600</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.524317</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.1 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 0.0</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:35.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.524367" lon="7.7376">
+  <name>-194</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:36.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737600</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.524367</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 0.0</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:36.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.524417" lon="7.7376">
+  <name>-195</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:37.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737600</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.524417</ogr:Field_2>
+    <ogr:Field_3>Speed: 13.0 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 0.0</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:37.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.524467" lon="7.7376">
+  <name>-196</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:38.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737600</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.524467</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 0.0</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:38.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.524517" lon="7.7376">
+  <name>-197</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:39.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737600</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.524517</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.2 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 0.0</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:39.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.524567" lon="7.7376">
+  <name>-198</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:40.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737600</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.524567</ogr:Field_2>
+    <ogr:Field_3>Speed: 12.8 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 0.0</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:40.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.524617" lon="7.7376">
+  <name>-199</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:41.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737600</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.524617</ogr:Field_2>
+    <ogr:Field_3>Speed: 9.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 0.0</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:41.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+<wpt lat="48.52465" lon="7.7376">
+  <name>-200</name>
+  <extensions>
+    <ogr:timestamp>2023/05/03 08:11:42.230+00</ogr:timestamp>
+    <ogr:Field_1>Longitude: 7.737600</ogr:Field_1>
+    <ogr:Field_2>Latitude: 48.524650</ogr:Field_2>
+    <ogr:Field_3>Speed: 9.3 mph</ogr:Field_3>
+    <ogr:Field_4>Heading: 0.0</ogr:Field_4>
+    <ogr:Field_5>Time: 2023-05-03T08:11:42.230Z</ogr:Field_5>
+  </extensions>
+</wpt>
+</gpx>

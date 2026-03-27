@@ -1,0 +1,226 @@
+# SPDX-FileCopyrightText: 2021-2026 Magic Lane International B.V. <info@magiclane.com>
+# SPDX-License-Identifier: Apache-2.0
+#
+# Contact Magic Lane at <info@magiclane.com> for SDK licensing options.
+
+set(EXAMPLES_COMMON_HDRS
+	${CMAKE_CURRENT_SOURCE_DIR}/ApiLogger.h
+	${CMAKE_CURRENT_SOURCE_DIR}/BitmapImpl.h
+	${CMAKE_CURRENT_SOURCE_DIR}/Environment.h
+	${CMAKE_CURRENT_SOURCE_DIR}/go_regular_ttf.h
+	${CMAKE_CURRENT_SOURCE_DIR}/Listeners.h
+	${CMAKE_CURRENT_SOURCE_DIR}/OpenGLContext.h
+	${CMAKE_CURRENT_SOURCE_DIR}/OpenGLContext_GLFW.h
+	${CMAKE_CURRENT_SOURCE_DIR}/OpenGLContext_ImGUI.h
+	${CMAKE_CURRENT_SOURCE_DIR}/OpenGLContext_SDL.h
+	${CMAKE_CURRENT_SOURCE_DIR}/Timer.h)
+
+set(EXAMPLES_COMMON_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/BitmapImpl.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/Environment.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/Listeners.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/OpenGLContext.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/Timer.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/font_montserrat_semi_bold_18.c
+	${CMAKE_CURRENT_SOURCE_DIR}/font_montserrat_semi_bold_22.c
+	${CMAKE_CURRENT_SOURCE_DIR}/font_montserrat_semi_bold_24.c)
+
+set(CenterMap_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/3DScene/CenterMap/CenterMap.cpp)
+set(MapPerspective_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/3DScene/MapPerspective/MapPerspective.cpp)
+set(MapStyle_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/3DScene/MapStyle/MapStyle.cpp)
+set(MapView_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/3DScene/MapView/MapView.cpp)
+set(MultiMapView_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/3DScene/MultiMapView/MultiMapView.cpp)
+set(PointsMarker_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/3DScene/PointsMarker/PointsMarker.cpp)
+set(PolygonMarker_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/3DScene/PolygonMarker/PolygonMarker.cpp)
+set(PolylineMarker_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/3DScene/PolylineMarker/PolylineMarker.cpp)
+
+set(CalculateRoute_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/CalculateRoute/CalculateRoute.cpp)	
+set(ChangeMapStyle_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/ChangeMapStyle/ChangeMapStyle.cpp)
+set(ContentDownload_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/ContentDownload/ContentDownload.cpp)
+set(ExportTrack_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/ExportTrack/ExportTrack.cpp)
+set(GpxNmeaPlayback_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/GpxNmeaPlayback/GpxNmeaPlayback.cpp)
+set(GpxRoutingSimulation_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/GpxRoutingSimulation/GpxRoutingSimulation.cpp)
+set(Markers_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/Markers/Markers.cpp)
+set(MultiSearch_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/MultiSearch/MultiSearch.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/MultiSearch/MultiSearchViewModel.cpp)
+set(SaveGPX_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/SaveGPX/SaveGPX.cpp)
+set(ReverseGeocoding_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/ReverseGeocoding/ReverseGeocoding.cpp)
+set(SimulateNavigation_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/SimulateNavigation/SimulateNavigation.cpp)
+set(SwitchMapPerspective_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/SwitchMapPerspective/SwitchMapPerspective.cpp)
+set(VRPOptimization_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/VRPOptimization/VRPOptimization.cpp)
+set(Weather_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/Weather/Weather.cpp)
+
+set(SearchAround_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/PlacesAndSearch/SearchAround/SearchAround.cpp)
+set(SearchFreeText_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/PlacesAndSearch/SearchFreeText/SearchFreeText.cpp)
+set(SearchFreeTextLimitByGeographicArea_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/PlacesAndSearch/SearchFreeTextLimitByGeographicArea/SearchFreeTextLimitByGeographicArea.cpp)
+
+set(CalculateRouteMultiView_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/RoutesAndNavigation/CalculateRouteMultiView/CalculateRouteMultiView.cpp)
+set(FeedSensorData_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/RoutesAndNavigation/FeedSensorData/FeedSensorData.cpp)
+set(FingerRoute_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/RoutesAndNavigation/FingerRoute/FingerRoute.cpp)
+set(NavigationLowEndHW_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/RoutesAndNavigation/NavigationLowEndHW/NavigationLowEndHW.cpp)
+set(PlayRoute_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/RoutesAndNavigation/PlayRoute/PlayRoute.cpp)
+set(RouteDirectionArrows_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/RoutesAndNavigation/RouteDirectionArrows/RouteDirectionArrows.cpp)
+set(Simulation_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/RoutesAndNavigation/Simulation/Simulation.cpp)
+
+set(TimezoneCoordinates_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/Timezone/TimezoneCoordinates/TimezoneCoordinates.cpp)
+set(TimezoneId_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/Timezone/TimezoneId/TimezoneId.cpp)
+
+set(AddCircleTerritory_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddCircleTerritory/AddCircleTerritory.cpp)
+set(AddCustomer_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddCustomer/AddCustomer.cpp)
+set(AddFullOptimization_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddFullOptimization/AddFullOptimization.cpp)
+set(AddOptimSingleVDiffDepartDest_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOptimSingleVDiffDepartDest/AddOptimSingleVDiffDepartDest.cpp)
+set(AddOptimWithFixedOrdersSequences_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOptimWithFixedOrdersSequences/AddOptimWithFixedOrdersSequences.cpp)
+set(AddOptimWithMultiVMultiDepart_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOptimWithMultiVMultiDepart/AddOptimWithMultiVMultiDepart.cpp)
+set(AddOptimWithMultiVMultiDest_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOptimWithMultiVMultiDest/AddOptimWithMultiVMultiDest.cpp)
+set(AddOptimWithMultiVSingleDepart_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOptimWithMultiVSingleDepart/AddOptimWithMultiVSingleDepart.cpp)
+set(AddOptimWithMultiVSingleVConstr_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOptimWithMultiVSingleVConstr/AddOptimWithMultiVSingleVConstr.cpp)
+set(AddOptimWithOrderFields_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOptimWithOrderFields/AddOptimWithOrderFields.cpp)
+set(AddOptimWithSequencePairs_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOptimWithSequencePairs/AddOptimWithSequencePairs.cpp)
+set(AddOptimWithSetMatrices_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOptimWithSetMatrices/AddOptimWithSetMatrices.cpp)
+set(AddOptimWithSingleVehicle_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOptimWithSingleVehicle/AddOptimWithSingleVehicle.cpp)
+set(AddOrdersToOptimization_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOrdersToOptimization/AddOrdersToOptimization.cpp)
+set(AddOrdersToOptimWithSetMatrices_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOrdersToOptimWithSetMatrices/AddOrdersToOptimWithSetMatrices.cpp)
+set(AddOrdersToRouteAtTheEnd_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOrdersToRouteAtTheEnd/AddOrdersToRouteAtTheEnd.cpp)
+set(AddOrdersToRouteAtTheOptimPos_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOrdersToRouteAtTheOptimPos/AddOrdersToRouteAtTheOptimPos.cpp)
+set(AddOrdersToRouteAtTheSpecPos_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOrdersToRouteAtTheSpecPos/AddOrdersToRouteAtTheSpecPos.cpp)
+set(AddOrdersToRouteWithSetMatrices_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOrdersToRouteWithSetMatrices/AddOrdersToRouteWithSetMatrices.cpp)
+set(AddPolygonTerritory_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddPolygonTerritory/AddPolygonTerritory.cpp)
+set(AddRectangleTerritory_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddRectangleTerritory/AddRectangleTerritory.cpp)
+set(AddVehicle_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddVehicle/AddVehicle.cpp)
+set(DeleteCustomer_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/DeleteCustomer/DeleteCustomer.cpp)
+set(DeleteOptimization_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/DeleteOptimization/DeleteOptimization.cpp)
+set(DeleteOrderFromOptimization_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/DeleteOrderFromOptimization/DeleteOrderFromOptimization.cpp)
+set(DeleteOrderFromRoute_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/DeleteOrderFromRoute/DeleteOrderFromRoute.cpp)
+set(DeleteRoute_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/DeleteRoute/DeleteRoute.cpp)
+set(DeleteTerritory_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/DeleteTerritory/DeleteTerritory.cpp)
+set(DeleteVehicle_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/DeleteVehicle/DeleteVehicle.cpp)
+set(GenerateTerritories_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/GenerateTerritories/GenerateTerritories.cpp)
+set(GetAllCustomers_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/GetAllCustomers/GetAllCustomers.cpp)
+set(GetAllOptimizations_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/GetAllOptimizations/GetAllOptimizations.cpp)
+set(GetAllRoutes_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/GetAllRoutes/GetAllRoutes.cpp)
+set(GetAllTerritories_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/GetAllTerritories/GetAllTerritories.cpp)
+set(GetAllVehicles_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/GetAllVehicles/GetAllVehicles.cpp)
+set(GetCustomer_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/GetCustomer/GetCustomer.cpp)
+set(GetCustomerHistory_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/GetCustomerHistory/GetCustomerHistory.cpp)
+set(GetFuelPrices_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/GetFuelPrices/GetFuelPrices.cpp)
+set(GetOptimization_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/GetOptimization/GetOptimization.cpp)
+set(GetRoute_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/GetRoute/GetRoute.cpp)
+set(GetSolutionForOptimization_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/GetSolutionForOptimization/GetSolutionForOptimization.cpp)
+set(GetTerritory_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/GetTerritory/GetTerritory.cpp)
+set(GetVehicle_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/GetVehicle/GetVehicle.cpp)
+set(MergeRoutes_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/MergeRoutes/MergeRoutes.cpp)
+set(ReoptimizeOptimization_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/ReoptimizeOptimization/ReoptimizeOptimization.cpp)
+set(ReoptimizeRoute_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/ReoptimizeRoute/ReoptimizeRoute.cpp)
+set(SearchCustomers_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/SearchCustomers/SearchCustomers.cpp)
+set(SearchFuelPrices_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/SearchFuelPrices/SearchFuelPrices.cpp)
+set(SearchMiscLocations_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/SearchMiscLocations/SearchMiscLocations.cpp)
+set(SearchOptimization_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/SearchOptimization/SearchOptimization.cpp)
+set(SearchOrders_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/SearchOrders/SearchOrders.cpp)
+set(SearchRoutes_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/SearchRoutes/SearchRoutes.cpp)
+set(SearchTerritories_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/SearchTerritories/SearchTerritories.cpp)
+set(SearchVehicles_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/SearchVehicles/SearchVehicles.cpp)
+set(SetFuelPrices_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/SetFuelPrices/SetFuelPrices.cpp)
+set(UnlinkRoute_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/UnlinkRoute/UnlinkRoute.cpp)
+set(UpdateCustomer_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/UpdateCustomer/UpdateCustomer.cpp)
+set(UpdateOptimization_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/UpdateOptimization/UpdateOptimization.cpp)
+set(UpdateOrderFromOptimization_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/UpdateOrderFromOptimization/UpdateOrderFromOptimization.cpp)
+set(UpdateRoute_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/UpdateRoute/UpdateRoute.cpp)
+set(UpdateTerritory_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/UpdateTerritory/UpdateTerritory.cpp)
+set(UpdateVehicle_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/UpdateVehicle/UpdateVehicle.cpp)
+

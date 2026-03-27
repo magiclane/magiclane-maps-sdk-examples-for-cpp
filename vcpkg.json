@@ -1,0 +1,48 @@
+{
+    "name": "maps-sdk-examples-for-cpp",
+    "description": "Maps SDK for C++ demo applications for Linux Desktop (x86_64) and Windows (x64)",
+    "homepage": "https://issuetracker.magiclane.com/magiclane/maps-sdk-examples-for-cpp",
+    "supports": "!osx & !mingw",
+    "version-semver": "1.0.0",
+    "dependencies": [
+        {
+            "name": "angle",
+            "platform": "windows"
+        },
+        {
+            "name": "nayuki-qr-code-generator"
+        },
+        {
+            "name": "dbus",
+            "platform": "linux"
+        }
+    ],
+    "features": {
+        "sdl": {
+            "description": "Prefer using SDL for OpenGL context creation",
+            "dependencies": [
+                {
+                    "name": "sdl2"
+                },
+                {
+                    "name": "imgui"
+                },
+                {
+                    "name": "lvgl"
+                }
+            ]
+        },
+        "glfw": {
+            "description": "Prefer using GLFW for OpenGL context creation",
+            "dependencies": [
+                {
+                    "name": "glfw3",
+                    "default-features": false
+                },
+                { 
+                    "name": "imgui"
+                }
+            ]
+        }
+    }
+}

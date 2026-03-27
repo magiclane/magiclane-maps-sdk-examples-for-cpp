@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: 2021-2026 Magic Lane International B.V. <info@magiclane.com>
+# SPDX-License-Identifier: Apache-2.0
+
+# https://gitlab.freedesktop.org/xorg/lib/libx11/-/issues/157
+leak:_XimOpenIM
+leak:libX11
+
+leak:libfontconfig
+
+leak:libGL
+leak:swrast_dri
