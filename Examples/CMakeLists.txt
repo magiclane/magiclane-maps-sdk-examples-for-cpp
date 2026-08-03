@@ -95,7 +95,8 @@ target_link_libraries(EXAMPLES_BUILD_OPTIONS INTERFACE ${CMAKE_DL_LIBS} ${CMAKE_
 
 if(MSVC)
     find_package(unofficial-angle CONFIG REQUIRED)
-    target_link_libraries(EXAMPLES_BUILD_OPTIONS INTERFACE unofficial::angle::libEGL unofficial::angle::libGLESv2)
+    target_link_libraries(EXAMPLES_BUILD_OPTIONS INTERFACE unofficial::angle::libEGL unofficial::angle::libGLESv2 shlwapi psapi)
+    target_link_options(EXAMPLES_BUILD_OPTIONS INTERFACE /ignore:4099)
 else()
     find_package(OpenGL COMPONENTS EGL GLES2 REQUIRED)
     if(TARGET OpenGL::GLES3)

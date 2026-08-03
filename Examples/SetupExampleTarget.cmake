@@ -45,6 +45,23 @@ function(setup_example_target exampleApp)
 
     target_link_libraries(${exampleApp} PRIVATE GEM::GEM EXAMPLES_BUILD_OPTIONS)
 
+    if(WIN32)
+        set(THIRD_PARTY_TARGETS SDL2::SDL2 unofficial::angle::libEGL unofficial::angle::libGLESv2)
+        foreach(lib_target ${THIRD_PARTY_TARGETS})
+            if(TARGET ${lib_target})
+                get_target_property(target_type ${lib_target} TYPE)
+                if(NOT target_type STREQUAL "STATIC_LIBRARY")
+                    add_custom_command(TARGET ${exampleApp} POST_BUILD
+                        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                            $<TARGET_FILE:${lib_target}>
+                            $<TARGET_FILE_DIR:${exampleApp}>
+                        VERBATIM
+                    )
+                endif()
+            endif()
+        endforeach()
+    endif()
+
     if(NOT GEM_TARGET_TYPE STREQUAL "STATIC_LIBRARY")
         if(WIN32)
             add_custom_command(TARGET ${exampleApp} POST_BUILD
@@ -53,21 +70,6 @@ function(setup_example_target exampleApp)
                     "$<TARGET_FILE_DIR:${exampleApp}>/"
                 VERBATIM
             )
-
-            set(THIRD_PARTY_TARGETS SDL2::SDL2 unofficial::angle::libEGL unofficial::angle::libGLESv2)
-            foreach(lib_target ${THIRD_PARTY_TARGETS})
-                if(TARGET ${lib_target})
-                    get_target_property(target_type ${lib_target} TYPE)
-                    if(NOT target_type STREQUAL "STATIC_LIBRARY")
-                        add_custom_command(TARGET ${exampleApp} POST_BUILD
-                            COMMAND ${CMAKE_COMMAND} -E copy_if_different
-                                $<TARGET_FILE:${lib_target}>
-                                $<TARGET_FILE_DIR:${exampleApp}>
-                            VERBATIM
-                        )
-                    endif()
-                endif()
-            endforeach()
         elseif(UNIX AND NOT APPLE)
             file(GLOB _GEM_SHARED_LIBS "${GEM_SDK_LIB_DIR}/libGEM*.so*")
             if(_GEM_SHARED_LIBS)

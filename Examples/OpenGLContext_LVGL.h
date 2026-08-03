@@ -608,7 +608,7 @@ private:
         vs = glCreateShader(GL_VERTEX_SHADER);
         fs = glCreateShader(GL_FRAGMENT_SHADER);
 
-        int length = strlen(vertex_shader);
+        GLint length = static_cast<GLint>(strlen(vertex_shader));
         glShaderSource(vs, 1, (const GLchar**)&vertex_shader, &length);
         glCompileShader(vs);
 
@@ -619,7 +619,7 @@ private:
             return 1;
         }
 
-        length = strlen(fragment_shader);
+        length = static_cast<GLint>(strlen(fragment_shader));
         glShaderSource(fs, 1, (const GLchar**)&fragment_shader, &length);
         glCompileShader(fs);
 
