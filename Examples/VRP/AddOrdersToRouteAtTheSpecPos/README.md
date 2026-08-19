@@ -15,6 +15,6 @@ When you run the example app, in addition to the existing orders, the route will
 1. Create a `vrp::RouteOrder` for each order that will be added. Set the specified position at which it will be added using the method `setIndexInRoute()` and set other desired fields.
 2. Insert all the `vrp::RouteOrder` created at 1.) in a `vrp::RouteOrderList`.
 3. Create a `ProgressListener`, `vrp::Service` and a `vrp::Request` that will be used for traking the request status.
-4. Retrieve the route like in the example `GetRoute()` in a `vrp::Route`.
-5 Call the `route.addOrders()` method from `vrp::Route`, using the list from 2.), a boolean to specify if the route should be reoptimized, a boolean to specify if the orders should be added at the optimal position (in this examples it has to be `false`) and the `ProgressListener`.
-6. Check if the associated request has reached the finished status. Once completed, you can retrieve the updated route by calling the `getRoute()` method, which returns a `vrp::Route` containing the updated route.
+4. Retrieve the route like in the [Get Route](../GetRoute) example, in a `vrp::Route`.
+5. Call the `route.addOrders()` method from `vrp::Route` using, in this order: the `ProgressListener`, the list from 2.), a boolean to specify if the orders should be added at the optimal position (`false` here, so the positions set at 1.) are respected), the `vrp::Request` from 3.), and a boolean to specify if the route should be reoptimized (`false` here).
+6. Check if the associated request has reached the finished status. Once completed, the orders have been added server-side. This sample then prints the `vrp::Route` object it fetched at 4.), which is the state from *before* the addition - call `getRoute()` again to see the updated route, as [Update Route](../UpdateRoute) does.

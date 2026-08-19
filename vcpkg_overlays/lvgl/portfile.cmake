@@ -1,3 +1,9 @@
+# LVGL must be linked statically: lvgl-config.cmake declares the targets
+# STATIC IMPORTED, and a DLL build breaks consumers on Windows because
+# exported data symbols (e.g. lv_font_montserrat_14 via LV_FONT_DEFAULT)
+# would require __declspec(dllimport) on the consumer side (LNK2001).
+set(VCPKG_LIBRARY_LINKAGE static)
+
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO lvgl/lvgl

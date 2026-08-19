@@ -1,0 +1,118 @@
+name: Bug report
+description: Report a problem with the Maps SDK for C++ or its examples
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to fill out this bug report!
+
+  - type: checkboxes
+    attributes:
+      label: Prerequisite checklist
+      description: Before you submit the issue, please consider the following points.
+      options:
+        - label: "I searched [existing issues](https://github.com/magiclane/magiclane-maps-sdk-examples-for-cpp/issues?q=is%3Aissue) to prevent duplicates"
+          required: true
+        - label: "I am reporting a problem, not asking a question (for questions, please see the [documentation](https://developer.magiclane.com/docs/cpp) first)"
+          required: true
+
+  - type: input
+    attributes:
+      label: Operating system
+      description: Include the version and architecture.
+      placeholder: "e.g. Windows 11 x64, Ubuntu 24.04 aarch64"
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Compiler / toolchain
+      placeholder: "e.g. MSVC 2022 17.10, GCC 13, Clang 18"
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Maps SDK version
+      description: The version of the SDK package you downloaded from developer.magiclane.com.
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Example(s) affected
+      placeholder: "e.g. Interactive/CalculateRoute, or n/a for a general SDK problem"
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: CMake preset and special flags
+      description: The preset you configured with, plus any custom compiler or CMake flags.
+      placeholder: "e.g. windows-sdl-vs2022, linux-glfw-ninja-debug"
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: Tell us how to reproduce the issue, ideally with a [minimal, complete and verifiable example](https://stackoverflow.com/help/mcve) based on one of the examples in this repository - you can start from the template below.
+      value: |
+        1.
+        2.
+
+        ```cpp
+        #include <API/GEM_Sdk.h>
+        #include <API/GEM_MapView.h>
+
+        #include "OpenGLContext.h"
+        #include "Listeners.h"
+        #include "Environment.h"
+
+        int main( int argc, char** argv )
+        {
+            Environment::HandleHelpOption( argc, argv );
+            Environment::SdkSession session( Environment::ResolveApiToken( argc, argv ), { "" } );
+
+            CTouchEventListener touchEventListener;
+            gem::StrongPointer<gem::MapView> mapView = gem::MapView::produce(
+                session.produceOpenGLContext( Environment::WindowFrameworks::Available, "Minimal repro", &touchEventListener ) );
+
+            WAIT_UNTIL_WINDOW_CLOSE();
+            return 0;
+        }
+        ```
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Expected behavior
+      description: Tell us what should happen.
+      placeholder: "The map should render centered on the current position."
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Actual behavior
+      description: Tell us what happens instead. Please include the full error message, build log, or backtrace if there is one.
+      placeholder: "The window stays black and GEM_GET_API_ERROR() returns ..."
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Last known working SDK version
+      description: If this worked before, which SDK version was the last one where it did?
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Screenshots, videos, logs
+      description: Attach anything else that helps explain the problem.
+      placeholder: "(You can drag files here)"
+    validations:
+      required: false

@@ -13,7 +13,7 @@ When you run the example app, the order will be deleted and the optimization wil
 ## How it works
 
 1. Create a `ProgressListener` and a `vrp::Service`.
-2. Retrieve the optimization like in the example `GetOptimization()` in a `vrp::Optimization`.
-3. Create a `vrp::Order` and initialize it with the order that you want to delete.
+2. Retrieve the optimization like in the [Get Optimization](../GetOptimization) example, in a `vrp::Optimization`, using your own optimization id (the sample has a `-1` placeholder that must be replaced).
+3. Take the `vrp::Order` you want to delete from `optimization.getOrders()`. This sample uses the order at index 4, and only runs if the optimization has more than four orders.
 4. Call the `deleteOrder()` method from `vrp::Optimization` from 2.) using the `vrp::Order` from 3.) and the `ProgressListener`.
 5. Once the operation completes, the new optimization will be returned in the `vrp::Optimization` from 2.).

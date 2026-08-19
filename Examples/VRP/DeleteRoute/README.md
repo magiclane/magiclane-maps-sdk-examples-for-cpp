@@ -13,4 +13,5 @@ When you run the example app, a route will be deleted.
 ## How it works
 
 1. Create a `ProgressListener` and `vrp::Service`.
-2. Call the `deleteRoute()` method from the `vrp::Service` using the route's ID and `ProgressListener` and wait for the operation to be done.
+2. Retrieve the route to delete with `getRoute()`, using your own route id (the sample has a `-1` placeholder that must be replaced).
+3. Call the `deleteRoute()` method from the `vrp::Service` using a list of route ids (`{ route.getId() }`) and the `ProgressListener`, and wait for the operation to be done.

@@ -19,17 +19,17 @@ When you run the example app, a list of territories will be returned and showed 
 ## How it works
 
 1. Create a `CoordinatesList` and add all the `Coordinates`.
-2. Create a `ProgressListener`, `vrp::Service` and `vrp::Territorylist`, in which the territories will be returned.
+2. Create a `ProgressListener`, `vrp::Service` and `vrp::TerritoryList`, in which the territories will be returned.
 3. Call the `generateTerritories()` method from `vrp::Service` using the lists from 2.) and 1., specify the number of territories that you want to create and the progress listener.
-4. Once the operation completes, the list from 2.) will contain the generated territories.
+4. Once the operation completes, the list from 2.) will contain the generated territories. This sample asks for 3 and prints each territory's id and polygon points on the console.
 
 ### To display the locations and territories on the map
 
-1. Create a `MapServiceListener`, `OpenGLContext` and `MapView`.
+1. Create a `MapViewListenerImpl`, `OpenGLContext` and `MapView`.
 2. Create a `MarkerCollection` of type Point and add  `CoordinatesList` from above.
-3. Create a `MarkerCollectionDisplaySettings` and set the `pointsGroupingZoomLevel` to `0`, to not group the points on the map.
-4. Set the newly created `MarkerCollection` in the markers collections of the map view preferences, together with the `MarkerCollectionDisplaySettings`.
+3. Create a `MarkerCollectionRenderSettings` and set the `pointsGroupingZoomLevel` to `0`, to not group the points on the map.
+4. Set the newly created `MarkerCollection` in the markers collections of the map view preferences, together with the `MarkerCollectionRenderSettings`.
 5. Instruct the `MapView` to center on the `MarkerCollection`'s area.
-6. For each territory create a `MarkerCollection` and a `MarkerCollectionDisplaySettings`. In the `MarkerCollection` add the data of the territory and in the `MarkerCollectionDisplaySettings` set the territory's color to the `polygonFillColor`.
-7. Set the all the newly created `MarkerCollection` in the markers collections of the map view preferences, together with the `MarkerCollectionDisplaySettings`.
+6. For each territory create a `MarkerCollection` and a `MarkerCollectionRenderSettings`. In the `MarkerCollection` add the data of the territory and in the `MarkerCollectionRenderSettings` set the territory's color to the `polygonFillColor`.
+7. Set the all the newly created `MarkerCollection` in the markers collections of the map view preferences, together with the `MarkerCollectionRenderSettings`.
 8. Allow the application to run until the map view is fully loaded.

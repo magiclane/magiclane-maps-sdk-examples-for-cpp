@@ -1,0 +1,45 @@
+name: Feature request
+description: Suggest an improvement to the Maps SDK for C++ or its examples
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for bringing up this idea!
+
+  - type: checkboxes
+    attributes:
+      label: Prerequisite checklist
+      description: Before you submit the request, please consider the following points.
+      options:
+        - label: "I searched [existing issues](https://github.com/magiclane/magiclane-maps-sdk-examples-for-cpp/issues?q=is%3Aissue) to prevent duplicates"
+          required: true
+
+  - type: textarea
+    attributes:
+      label: Describe the feature
+      description: A clear and concise description of the change you would like to see, and any alternatives you have considered.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Use cases
+      description: Explain at least one concrete use case where this feature would help you.
+      placeholder: |
+        When displaying a fleet of vehicles on the map...
+
+        For rendering a custom overlay during navigation...
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: API example
+      description: If you are requesting a new SDK or example API, sketch how you would like to use it.
+      value: |
+        ```cpp
+        // How the new API could be called
+        ```
+    validations:
+      required: false

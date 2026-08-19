@@ -15,6 +15,7 @@ When you run the example app, the route will be unlinked.
 ## How it works
 
 1. Create a `ProgressListener` and a `vrp::Service`.
-2. Call the `unlinkRoute()` method from the `vrp::Service` using the route's id which will be unlinked and the `ProgressListener` and wait for the operation to be done.
+2. Retrieve the route to unlink with `getRoute()` from the `vrp::Service`, using the route id.
+3. Call the `unlink()` method on the `vrp::Route` from 2.) using the `ProgressListener` and wait for the operation to be done.
 
 **Note:** The route's ID won't change so it can be retrieved using the same `routeId`.

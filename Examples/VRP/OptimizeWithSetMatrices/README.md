@@ -19,7 +19,7 @@ The solution will be retrieved and displayed on the map once the optimization is
    - **Configuration parameters** (optimization criteria, route type, time windows, etc.)
    - **Orders** (pickup and delivery points with location, weight, cube, time windows, and service time)
    - **Vehicles** (capacity, start and end times, consumption, and identifiers)
-   - **Departures and destinations** (depots and end points)
+   - **Departures** (a single depot). This example uses `routeType` 0 (RoundRoute), so `destinations` is empty and the route returns to the depot.
    - **Vehicle constraints** (optional operational limits such as maximum distance or revenue)
    - **Predefined matrices** (distance and time matrices for faster optimization)
 

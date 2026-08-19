@@ -1,7 +1,7 @@
 ## Overview
 
 This example app demonstrates the following features:
-- Add a polygon territory; create an optimization with the customer of a territory
+- Add a polygon territory and display it on the map.
 
 ![](screenshot.png)
 
@@ -18,8 +18,8 @@ When you run the example app, a polygon territory will be saved.
 ### To display the territory
 
 1. Create a `CoordinatesList` and add the territory's coordinates to it.
-2. Create a `MapServiceListener`, `OpenGLContext` and `MapView`.
+2. Create a `MapViewListenerImpl`, `OpenGLContext` and `MapView`.
 3. Create a `MarkerCollection` of type Polygon and add the list created at 1.) to it.
-4. Create a `MarkerCollectionDisplaySettings` and set the territory's color to the polygon fill color.
-5. Set the newly created `MarkerCollection` in the markers collections of the map view preferences, together with the `MarkerCollectionDisplaySettings`.
+4. Create a `MarkerCollectionRenderSettings` and set the territory's color to the polygon fill color.
+5. Set the newly created `MarkerCollection` in the markers collections of the map view preferences, together with the `MarkerCollectionRenderSettings`.
 6. Allow the application to run until the map view is fully loaded.

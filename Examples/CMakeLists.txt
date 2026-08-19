@@ -95,8 +95,9 @@ target_link_libraries(EXAMPLES_BUILD_OPTIONS INTERFACE ${CMAKE_DL_LIBS} ${CMAKE_
 
 if(MSVC)
     find_package(unofficial-angle CONFIG REQUIRED)
-    target_link_libraries(EXAMPLES_BUILD_OPTIONS INTERFACE unofficial::angle::libEGL unofficial::angle::libGLESv2 shlwapi psapi)
-    target_link_options(EXAMPLES_BUILD_OPTIONS INTERFACE /ignore:4099)
+    target_link_libraries(EXAMPLES_BUILD_OPTIONS INTERFACE unofficial::angle::libEGL unofficial::angle::libGLESv2)
+    # opengl32 for the WGL host-context calls in OpenGLContext_Win32EGL.h
+    target_link_libraries(EXAMPLES_BUILD_OPTIONS INTERFACE opengl32)
 else()
     find_package(OpenGL COMPONENTS EGL GLES2 REQUIRED)
     if(TARGET OpenGL::GLES3)
@@ -302,6 +303,7 @@ if(NOT USE_GLFW)
         ReverseGeocoding
         SimulateNavigation
         SwitchMapPerspective
+        UserRoadblock
         VRPOptimization
         Weather)
 endif()

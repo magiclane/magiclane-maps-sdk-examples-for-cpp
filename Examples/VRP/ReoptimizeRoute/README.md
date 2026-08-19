@@ -11,6 +11,7 @@ When you run the example app, a new route will be returned.
 
 ## How it works
 
-1. Create a `ProgressListener`, a `vrp::Service` and a `vrp::Route`.
-2. Call the `route.reoptimize()` using the `vrp::Route` from 1.) and the `ProgressListener`.
-3. Check if the associated request has reached the finished status. Once completed, you can retrieve the updated route by calling the `getRoute()` method, which returns a `vrp::Route` containing the reoptimized route.
+1. Create a `ProgressListener`, a `vrp::Service`, a `vrp::Route` and a `vrp::Request` that will be used to track the request status.
+2. Retrieve the route to reoptimize with `getRoute()` from the `vrp::Service`, using the route id.
+3. Call `reoptimize()` on the `vrp::Route` from 2.) using the `ProgressListener` and the `vrp::Request` from 1.).
+4. Check if the associated request has reached the finished status. Once completed, you can retrieve the updated route by calling the `getRoute()` method, which returns a `vrp::Route` containing the reoptimized route.

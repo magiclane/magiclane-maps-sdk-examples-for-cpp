@@ -11,38 +11,31 @@
 
 int main( int argc, char** argv )
 {
-	// Get new project API token from:
-	// https://developer.magiclane.com/api/projects
-	std::string projectApiToken = "";
+    // Get new project API token from:
+    // https://developer.magiclane.com/api/projects
+    Environment::HandleHelpOption( argc, argv );
 
-#if defined(API_TOKEN)
-	projectApiToken = std::string( API_TOKEN );
-#else
-	auto value = std::getenv( "GEM_TOKEN" );
-	if( value != nullptr )
-		projectApiToken = value;
-#endif
+    std::string projectApiToken = Environment::ResolveApiToken( argc, argv );
 
-	// Sdk objects can be created & used below this line
-	Environment::SdkSession session(projectApiToken, { argc > 1 ? argv[1] : "" }); // SDK API debug logging path 
+    // Sdk objects can be created & used below this line
+    Environment::SdkSession session( projectApiToken, { argc > 1 && argv[1][0] != '-' ? argv[1] : "" } ); // SDK API debug logging path
 
-	if (GEM_GET_API_ERROR() != gem::KNoError) // check for errors after session creation
-		return GEM_GET_API_ERROR();
-
+    if( GEM_GET_API_ERROR() != gem::KNoError ) // check for errors after session creation
+        return GEM_GET_API_ERROR();
 
     {
         ProgressListener listener;
         gem::vrp::Service serv;
 
         gem::vrp::Optimization optimization;
-        gem::LargeInteger optimizationId = -1;      // set your optimization id  
-        int res = serv.getOptimization(&listener, optimization, optimizationId);
-        WAIT_UNTIL(std::bind(&ProgressListener::IsFinished, &listener), 5000);
+        gem::LargeInteger optimizationId = -1; // set your optimization id
+        int res = serv.getOptimization( &listener, optimization, optimizationId );
+        WAIT_UNTIL( std::bind( &ProgressListener::IsFinished, &listener ), 5000 );
 
-        res = serv.deleteOptimization(&listener, { optimization.getId() });
-        WAIT_UNTIL(std::bind(&ProgressListener::IsFinished, &listener), 5000);
+        res = serv.deleteOptimization( &listener, { optimization.getId() } );
+        WAIT_UNTIL( std::bind( &ProgressListener::IsFinished, &listener ), 5000 );
 
-        if (listener.IsFinished() && listener.GetError() == gem::KNoError && res == gem::KNoError)
+        if( listener.IsFinished() && listener.GetError() == gem::KNoError && res == gem::KNoError )
             std::cout << "Optimization deleted successfully" << std::endl;
         else
             std::cout << "Optimization couldn't be deleted" << std::endl;
@@ -51,12 +44,12 @@ int main( int argc, char** argv )
     return 0;
 }
 
-#if ( defined(_WIN32) || defined(_WIN64) ) && !defined(__MINGW32__) && !defined(__MINGW64__)
+#if ( defined( _WIN32 ) || defined( _WIN64 ) ) && !defined( __MINGW32__ ) && !defined( __MINGW64__ )
 
-int WINAPI WinMain( HINSTANCE hInstance, // Instance
-    HINSTANCE hPrevInstance, // Previous Instance
-    LPSTR lpCmdLine, // Command Line Parameters
-    int nCmdShow )
+int WINAPI WinMain( HINSTANCE hInstance,     // Instance
+                    HINSTANCE hPrevInstance, // Previous Instance
+                    LPSTR lpCmdLine,         // Command Line Parameters
+                    int nCmdShow )
 {
     main( 0, nullptr );
 

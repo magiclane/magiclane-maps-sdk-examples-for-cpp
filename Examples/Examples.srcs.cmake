@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2021-2026 Magic Lane International B.V. <info@magiclane.com>
+# SPDX-FileCopyrightText: 2022-2026 Magic Lane International B.V. <info@magiclane.com>
 # SPDX-License-Identifier: Apache-2.0
 #
 # Contact Magic Lane at <info@magiclane.com> for SDK licensing options.
@@ -9,10 +9,12 @@ set(EXAMPLES_COMMON_HDRS
 	${CMAKE_CURRENT_SOURCE_DIR}/Environment.h
 	${CMAKE_CURRENT_SOURCE_DIR}/go_regular_ttf.h
 	${CMAKE_CURRENT_SOURCE_DIR}/Listeners.h
+	${CMAKE_CURRENT_SOURCE_DIR}/LvglTheme.h
 	${CMAKE_CURRENT_SOURCE_DIR}/OpenGLContext.h
 	${CMAKE_CURRENT_SOURCE_DIR}/OpenGLContext_GLFW.h
 	${CMAKE_CURRENT_SOURCE_DIR}/OpenGLContext_ImGUI.h
 	${CMAKE_CURRENT_SOURCE_DIR}/OpenGLContext_SDL.h
+	${CMAKE_CURRENT_SOURCE_DIR}/OpenGLContext_Win32EGL.h
 	${CMAKE_CURRENT_SOURCE_DIR}/Timer.h)
 
 set(EXAMPLES_COMMON_SRCS
@@ -20,10 +22,14 @@ set(EXAMPLES_COMMON_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/Environment.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/Listeners.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/OpenGLContext.cpp
-	${CMAKE_CURRENT_SOURCE_DIR}/Timer.cpp
-	${CMAKE_CURRENT_SOURCE_DIR}/font_montserrat_semi_bold_18.c
-	${CMAKE_CURRENT_SOURCE_DIR}/font_montserrat_semi_bold_22.c
-	${CMAKE_CURRENT_SOURCE_DIR}/font_montserrat_semi_bold_24.c)
+	${CMAKE_CURRENT_SOURCE_DIR}/Timer.cpp)
+
+if(NOT USE_GLFW)
+	list(APPEND EXAMPLES_COMMON_SRCS
+		${CMAKE_CURRENT_SOURCE_DIR}/font_montserrat_semi_bold_18.c
+		${CMAKE_CURRENT_SOURCE_DIR}/font_montserrat_semi_bold_22.c
+		${CMAKE_CURRENT_SOURCE_DIR}/font_montserrat_semi_bold_24.c)
+endif()
 
 set(CenterMap_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/3DScene/CenterMap/CenterMap.cpp)
@@ -43,7 +49,7 @@ set(PolylineMarker_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/3DScene/PolylineMarker/PolylineMarker.cpp)
 
 set(CalculateRoute_SRCS
-	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/CalculateRoute/CalculateRoute.cpp)	
+	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/CalculateRoute/CalculateRoute.cpp)
 set(ChangeMapStyle_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/ChangeMapStyle/ChangeMapStyle.cpp)
 set(ContentDownload_SRCS
@@ -67,6 +73,8 @@ set(SimulateNavigation_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/SimulateNavigation/SimulateNavigation.cpp)
 set(SwitchMapPerspective_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/SwitchMapPerspective/SwitchMapPerspective.cpp)
+set(UserRoadblock_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/UserRoadblock/UserRoadblock.cpp)
 set(VRPOptimization_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/VRPOptimization/VRPOptimization.cpp)
 set(Weather_SRCS
@@ -119,6 +127,10 @@ set(AddOptimWithMultiVSingleVConstr_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOptimWithMultiVSingleVConstr/AddOptimWithMultiVSingleVConstr.cpp)
 set(AddOptimWithOrderFields_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOptimWithOrderFields/AddOptimWithOrderFields.cpp)
+set(AddOptimWithOrdersInSameRoute_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOptimWithOrdersInSameRoute/AddOptimWithOrdersInSameRoute.cpp)
+set(AddOptimWithOrdersSequences_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOptimWithOrdersSequences/AddOptimWithOrdersSequence.cpp)
 set(AddOptimWithSequencePairs_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/VRP/AddOptimWithSequencePairs/AddOptimWithSequencePairs.cpp)
 set(AddOptimWithSetMatrices_SRCS
@@ -187,6 +199,27 @@ set(GetVehicle_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/VRP/GetVehicle/GetVehicle.cpp)
 set(MergeRoutes_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/VRP/MergeRoutes/MergeRoutes.cpp)
+set(OptimizeFullDetails_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/OptimizeFullDetails/OptimizeFullDetails.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/FleetUtils.cpp)
+set(OptimizeMultipleVehicle_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/OptimizeMultipleVehicle/OptimizeMultipleVehicles.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/FleetUtils.cpp)
+set(OptimizeSingleVehicle_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/OptimizeSingleVehicle/OptimizeSingleVehicle.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/FleetUtils.cpp)
+set(OptimizeWithFixedSequence_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/OptimizeWithFixedSequence/OptimizeWithFixedSequence.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/FleetUtils.cpp)
+set(OptimizeWithSameRouteSequence_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/OptimizeWithSameRouteSequence/OptimizeSameRouteSequence.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/FleetUtils.cpp)
+set(OptimizeWithSequencePairs_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/OptimizeWithSequencePairs/OptimizeSequencePairs.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/FleetUtils.cpp)
+set(OptimizeWithSetMatrices_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/VRP/OptimizeWithSetMatrices/OptimizeWithSetMatrices.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/FleetUtils.cpp)
 set(ReoptimizeOptimization_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/VRP/ReoptimizeOptimization/ReoptimizeOptimization.cpp)
 set(ReoptimizeRoute_SRCS

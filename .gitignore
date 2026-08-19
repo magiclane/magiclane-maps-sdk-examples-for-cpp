@@ -90,3 +90,6 @@ DerivedData
 *.exe
 *.dll
 *.lib
+
+# Claude / Cowork local agent folder
+.claude/

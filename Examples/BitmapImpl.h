@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2021-2026 Magic Lane International B.V. <info@magiclane.com>
+// SPDX-FileCopyrightText: 2024-2026 Magic Lane International B.V. <info@magiclane.com>
 // SPDX-License-Identifier: Apache-2.0
 //
 // Contact Magic Lane at <info@magiclane.com> for SDK licensing options.
@@ -13,7 +13,7 @@ public:
     BitmapImpl( int width, int height );
     ~BitmapImpl();
 
-    static unsigned int LoadTextureIntoGPU(int width, int height, void* data);
+    static unsigned int LoadTextureIntoGPU( int width, int height, void* data );
 
     // gem::IRenderContext methods
     gem::EImagePixelFormat encoding() const override;
@@ -25,7 +25,7 @@ public:
     void end() override;
 
     gem::Size size() const override;
-    
+
     int alignment() const override;
 
     void clear();

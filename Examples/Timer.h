@@ -10,24 +10,23 @@
 class Timer : public gem::ITimerService
 {
 public:
-	Timer();
+    Timer();
 
-	void Pause();
-	void Resume();
-	void Tick();
-	unsigned int GetPeriod();
-
-protected:
-
-	int onRegisterListener(gem::ITimerListener* listener);
-	void onUnregisterListener();
-
-	int onStartTimer(int intervalMs);
-	int onStopTimer();
+    void Pause();
+    void Resume();
+    void Tick();
+    unsigned int GetPeriod();
 
 protected:
-	gem::ITimerListener* m_pListener;
-	int m_nTimerId;
-	bool m_bPauseTimer;
-	unsigned int m_nPeriod;
+    int onRegisterListener( gem::ITimerListener* listener ) override;
+    void onUnregisterListener() override;
+
+    int onStartTimer( int intervalMs ) override;
+    int onStopTimer() override;
+
+protected:
+    gem::ITimerListener* m_pListener;
+    int m_nTimerId;
+    bool m_bPauseTimer;
+    unsigned int m_nPeriod;
 };

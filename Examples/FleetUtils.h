@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2021-2026 Magic Lane International B.V. <info@magiclane.com>
+// SPDX-FileCopyrightText: 2025-2026 Magic Lane International B.V. <info@magiclane.com>
 // SPDX-License-Identifier: Apache-2.0
 //
 // Contact Magic Lane at <info@magiclane.com> for SDK licensing options.
@@ -14,18 +14,18 @@
 #include <cctype>
 #include <stdexcept>
 
-#include <API/GEM_Coordinates.h>  // Now you can include this
+#include <API/GEM_Coordinates.h>
 class JsonValue;
 
 using JsonObject = std::map<std::string, JsonValue>;
 using JsonArray = std::vector<JsonValue>;
 using JsonVariant = std::variant<std::nullptr_t, bool, double, std::string, JsonArray, JsonObject>;
 
-class JsonValue 
+class JsonValue
 {
 public:
     JsonValue();
-    JsonValue(JsonVariant v);
+    JsonValue( JsonVariant v );
 
     bool isObject() const;
     bool isArray() const;
@@ -39,22 +39,22 @@ public:
     double asNumber() const;
     bool asBool() const;
 
-    const JsonValue& operator[](const std::string& key) const;
-    const JsonValue& operator[](size_t index) const;
+    const JsonValue& operator[]( const std::string& key ) const;
+    const JsonValue& operator[]( size_t index ) const;
 
     JsonVariant value;
 };
 
-class JsonParser 
+class JsonParser
 {
 public:
-    explicit JsonParser(const std::string& input);
+    explicit JsonParser( const std::string& input );
 
     JsonValue parse();
 
 private:
     void skipSpaces();
-    bool match(char c);
+    bool match( char c );
     JsonValue parseValue();
     JsonValue parseObject();
     JsonValue parseArray();
@@ -69,7 +69,5 @@ private:
 class Utils
 {
 public:
-    static std::vector<gem::Coordinates> decodePolyline(const std::string& encoded);
+    static std::vector<gem::Coordinates> decodePolyline( const std::string& encoded );
 };
-
-

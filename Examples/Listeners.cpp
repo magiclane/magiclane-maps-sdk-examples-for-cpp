@@ -9,46 +9,36 @@
 
 #include "OpenGLContext.h"
 
-MapViewListenerImpl::MapViewListenerImpl()
-{
-}
+MapViewListenerImpl::MapViewListenerImpl() {}
 
-void MapViewListenerImpl::onViewRendered(gem::EViewDataTransitionStatus tivStatus, gem::EViewCameraTransitionStatus camStatus)
+void MapViewListenerImpl::onViewRendered( gem::EViewDataTransitionStatus tivStatus, gem::EViewCameraTransitionStatus camStatus )
 {
-	if (tivStatus == gem::EViewDataTransitionStatus::VD_Complete)
-		m_bStatus = true;
+    if( tivStatus == gem::EViewDataTransitionStatus::VD_Complete )
+        m_bStatus = true;
 }
 
 bool MapViewListenerImpl::IsFinished()
 {
-	return m_bStatus;
+    return m_bStatus;
 }
 
-OffboardListenerImpl::OffboardListenerImpl()
+OffboardListenerImpl::OffboardListenerImpl() {}
+
+void OffboardListenerImpl::onConnectionStatusUpdated( bool connected )
 {
+    m_bStatus = connected;
 }
 
-void OffboardListenerImpl::onConnectionStatusUpdated(bool connected)
-{
-	m_bStatus = connected;
-}
+void OffboardListenerImpl::onWorldwideRoadMapSupportDisabled( EReason reason ) {}
 
-void OffboardListenerImpl::onWorldwideRoadMapSupportDisabled(EReason reason)
-{
-
-}
-
-void OffboardListenerImpl::onWorldwideRoadMapSupportStatus(EStatus state)
-{
-
-}
+void OffboardListenerImpl::onWorldwideRoadMapSupportStatus( EStatus state ) {}
 
 void OffboardListenerImpl::onApiTokenRejected()
 {
-	gem::Debug().log(gem::LogWarn, "Listeners", __FUNCTION__, __FILE__, __LINE__, "API token rejected!");
+    gem::Debug().log( gem::LogWarn, "Listeners", __FUNCTION__, __FILE__, __LINE__, "API token rejected!" );
 }
 
 bool OffboardListenerImpl::IsOnline() const
 {
-	return m_bStatus;
+    return m_bStatus;
 }

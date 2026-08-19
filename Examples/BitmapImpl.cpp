@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2021-2026 Magic Lane International B.V. <info@magiclane.com>
+// SPDX-FileCopyrightText: 2024-2026 Magic Lane International B.V. <info@magiclane.com>
 // SPDX-License-Identifier: Apache-2.0
 //
 // Contact Magic Lane at <info@magiclane.com> for SDK licensing options.
@@ -25,24 +25,24 @@ BitmapImpl::~BitmapImpl()
     }
 }
 
-unsigned int BitmapImpl::LoadTextureIntoGPU(int width, int height, void* data)
+unsigned int BitmapImpl::LoadTextureIntoGPU( int width, int height, void* data )
 {
     unsigned int textureId;
 
-    glGenTextures(1, &textureId);
-    glBindTexture(GL_TEXTURE_2D, textureId);
+    glGenTextures( 1, &textureId );
+    glBindTexture( GL_TEXTURE_2D, textureId );
 
     // Setup filtering parameters for display
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE); // Required on WebGL for non power-of-two textures
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE); // Required on WebGL for non power-of-two textures
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE ); // Required on WebGL for non power-of-two textures
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE ); // Required on WebGL for non power-of-two textures
 
     // Upload pixels into texture
 #ifdef GL_UNPACK_ROW_LENGTH
-    glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
+    glPixelStorei( GL_UNPACK_ROW_LENGTH, 0 );
 #endif
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+    glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data );
 
     return textureId;
 }
@@ -59,13 +59,10 @@ const gem::Rect& BitmapImpl::viewport() const
 
 void* BitmapImpl::begin()
 {
-    return (void*)m_buffer;
+    return ( void* ) m_buffer;
 }
 
-void BitmapImpl::end()
-{
-
-}
+void BitmapImpl::end() {}
 
 gem::Size BitmapImpl::size() const
 {
@@ -79,7 +76,7 @@ int BitmapImpl::alignment() const
 
 void BitmapImpl::clear()
 {
-    memset( m_buffer, 0xFFFFFFFF, (size_t)m_size.width * (size_t)m_size.height * 4 );
+    memset( m_buffer, 0xFFFFFFFF, ( size_t ) m_size.width * ( size_t ) m_size.height * 4 );
 }
 
 void BitmapImpl::resize( int w, int h )
@@ -92,7 +89,7 @@ void BitmapImpl::resize( int w, int h )
 
     if( w && h )
     {
-        m_buffer = new unsigned char[(size_t)w * (size_t)h * 4];
+        m_buffer = new unsigned char[( size_t ) w * ( size_t ) h * 4];
         clear();
     }
 }

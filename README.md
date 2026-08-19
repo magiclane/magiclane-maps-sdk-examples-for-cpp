@@ -24,6 +24,7 @@ This set of individual, use-case based projects is designed to be cloned by deve
 * [[Interactive] Save GPX](Examples/Interactive/SaveGPX) - Save map matched improved positions in GPX format
 * [[Interactive] Simulate Navigation](Examples/Interactive/SimulateNavigation) - Calculate a route between two given pairs of coordinates then perform a simulation of navigating on it
 * [[Interactive] Switch Map Perspective](Examples/Interactive/SwitchMapPerspective) - Show how to change the map perspective
+* [[Interactive] User Roadblock](Examples/Interactive/UserRoadblock) - Define a multi-point user roadblock interactively on the map and see the route avoid it
 * [[Interactive] VRP Optimization](Examples/Interactive/VRPOptimization) - Add an optimization with custom configuration parameters, orders with different fields set, multiple vehicles with different constraints set; display the solution on the map
 * [[Interactive] Weather](Examples/Interactive/Weather) - Retrieve and display current weather, hourly forecasts, and daily forecasts for any map location
 * [Search Around](Examples/PlacesAndSearch/SearchAround) - Search for nearby places using a pair of coordinates
@@ -204,17 +205,19 @@ If no API Key is set, you can still test your apps, but a watermark will be disp
 
 Linux:
 ```bash
-export API_TOKEN=<your_token>
+export GEM_TOKEN=<your_token>
 ```
 
 Windows:
 ```cmd
-set API_TOKEN=<your_token>
+set GEM_TOKEN=<your_token>
 ```
 
-or directly in the CMake command by providing the option: ```-DAPI_TOKEN="<your_token>"```
+The token is read when the example starts, so no reconfiguring or rebuilding is needed.
 
-The preset is configured to read `API_TOKEN` from the environment variable `$env{API_TOKEN}`.
+Alternatively, pass it on the command line with ```--token=<your_token>```, place it in a `gem_token.txt` file next to the executable (or in `<home>/.magiclane/gem_token.txt`), or bake it in at build time by providing the CMake option: ```-DGEM_TOKEN="<your_token>"```
+
+The preset is configured to read `GEM_TOKEN` from the environment variable `$env{GEM_TOKEN}` at configure time. A runtime token always overrides the baked-in one, and each example prints which source was used - never the token itself.
 
 
 ### Troubleshoot

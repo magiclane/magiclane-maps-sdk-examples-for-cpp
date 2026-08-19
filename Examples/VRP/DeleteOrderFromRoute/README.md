@@ -12,7 +12,7 @@ When you run the example app, the order will be deleted and the route will be up
 ## How it works
 
 1. Create a `ProgressListener` and a `vrp::Service`.
-2. Retrieve the route like in the example `GetRoute()` in a `vrp::Route`.
-3. Create a `vrp::RouteOrder` and initialize it with the order that you want to delete.
+2. Retrieve the route like in the [Get Route](../GetRoute) example, in a `vrp::Route`, using your own route id (the sample has a `-1` placeholder that must be replaced).
+3. Take the `vrp::RouteOrder` you want to delete from `route.getOrders()`. This sample uses the order at index 4, and only runs if the route has more than four orders.
 4. Call the `deleteOrder()` method from `vrp::Route` from 2.) using the `vrp::RouteOrder` from 3.) and the `ProgressListener`.
-5. Once the operation completes, the `vrp::Route` from 2.) will be updated.
+5. Once the operation completes, the `vrp::Route` from 2.) will be updated, and the sample prints it with its remaining orders on the console.

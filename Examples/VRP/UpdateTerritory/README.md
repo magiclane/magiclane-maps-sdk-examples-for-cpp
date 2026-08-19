@@ -13,4 +13,4 @@ When you run the example app, the changes made on the territory will be saved.
 2. Retrieve the territory you want to update (see [Get Territory](../GetTerritory) example) in a `vrp::Territory`.
 3. Change the desired fields of the `vrp::Territory`.
 4. Call the `updateTerritory()` method from the `vrp::Service` using the `vrp::Territory` from 2.) and the `ProgressListener` and wait for the operation to be done.
-5. The list of customer that are inside the territory was also updated. Access it using the method `territory.getCustomers()`.
+5. The list of customers inside the territory is refreshed server-side by the update. It can be read with `territory.getCustomers()`, which this sample does not do.

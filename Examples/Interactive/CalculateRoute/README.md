@@ -12,8 +12,8 @@ When the example app is run, the scene is viewed from above. A fly will be perfo
 ## How it works
 
 1. Create an instance of a `CTouchEventListener` to make the map interactive, enabling touch events such as pan and zoom
-2. Create an instance of `MapView` producing an OpenGL context using ImGUI, passing in the touch event listener, and a custom GUI function, `getUiRender`
-3. The custom GUI function has a button to calculate a route; latitude, longitude coordinates for a preset departure position, and a preset destination
+2. Create an instance of `MapView` producing an OpenGL context with the selected UI backend (LVGL by default; ImGui can be selected with `--ui_backend=imgui`), passing in the touch event listener and the UI callbacks
+3. The UI has a button to calculate a route; latitude, longitude coordinates for a preset departure position, and a preset destination
    position, are given using a `gem::LandmarkList` and then a route is calculated using `gem::RoutingService().calculateRoute()`;
    a `ProgressListener` is used to detect when the route calculation is complete, and if the result, stored using a `gem::RouteList`,
    contains at least one route, the first route, at index 0, is added to the map to be rendered, and the map centers on it, using `mapView->centerOnRoute()`

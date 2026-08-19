@@ -215,7 +215,7 @@ Options:
                                  (default: Release)
 
     --api-token=<token>          Specify API token to be hardcoded into examples
-                                 Can also be set via API_TOKEN environment variable
+                                 Can also be set via GEM_TOKEN environment variable
                                  (command line takes precedence)
 
     --with-sdl                   Prefer using SDL for OpenGL context creation
@@ -398,8 +398,8 @@ function build_all_examples()
     local -a CMAKE_ARGS=()
     CMAKE_ARGS+=("--preset" "${CONFIG_PRESET_NAME}")
 
-    if [[ -n "${API_TOKEN}" ]]; then
-        CMAKE_ARGS+=("-DAPI_TOKEN=${API_TOKEN}")
+    if [[ -n "${GEM_TOKEN}" ]]; then
+        CMAKE_ARGS+=("-DGEM_TOKEN=${GEM_TOKEN}")
     else
         log_warning "No token set. You can still test your apps, but a watermark will be displayed, and all the online services including mapping, searching, routing, etc. will slow down after a few minutes."
     fi
@@ -480,7 +480,7 @@ function print_sanitizer_instructions()
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 SDK_ARCHIVE_PATH=""
-API_TOKEN="${API_TOKEN:-}"
+GEM_TOKEN="${GEM_TOKEN:-}"
 BUILD_TYPE="Release"
 WITH_SDL=false
 WITH_SANITIZER=""
@@ -533,7 +533,7 @@ while true; do
             ;;
         --api-token)
             shift
-            API_TOKEN="${1}"
+            GEM_TOKEN="${1}"
             ;;
         --with-sdl)
             WITH_SDL=true

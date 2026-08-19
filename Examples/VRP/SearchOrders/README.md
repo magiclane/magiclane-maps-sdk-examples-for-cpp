@@ -9,9 +9,9 @@ When you run the example app, all orders from the database that contain the `sea
 
 ## How it works
 
-1. Initialize `vrp::Customer` objects with desired coordinates and details.
+1. Initialize `vrp::Customer` objects with desired coordinates and details, and add each one to the database with `addCustomer()` - an order can only be created for a customer that exists.
 2. Create an `vrp::Order` object for each customer, setting the relevant order details.
 3. Create a `ProgressListener`, `vrp::Service`, and an `vrp::OrderList`.
 4. Add the initialized orders to the database by calling the `addOrder()` method from the `vrp::Service`, and wait for the operation to complete.
-5. After adding the orders, call the `getOrders()` method from the `vrp::Service` using the list from step 3.) and the `ProgressListener`.
+5. After adding the orders, call the `getOrders()` method from the `vrp::Service` using the list from step 3.), the `ProgressListener` and the text to search for (`"Example"` here).
 6. Once the operation completes, the list from step 3.) will be populated with orders that match the search criteria.

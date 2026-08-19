@@ -21,7 +21,7 @@ The solution will be retrieved and displayed on the map once the optimization is
    * **Configuration parameters** (optimization criteria, route type, time windows, etc.)
    * **Orders** (pickup and delivery points with location, weight, cube, time windows, and service time)
    * **Vehicles** (capacity, start and end times, consumption, and identifiers)
-   * **Departures and destinations** (depots and end points)
+   * **Departures** (depots). This example uses `routeType` 1 (EndAnywhere), so `destinations` is empty and the routes end at their last order.
    * **Vehicle constraints** (optional operational limits such as maximum distance or revenue)
 
 2. Create a `ProgressListener` and a `vrp::Service`.

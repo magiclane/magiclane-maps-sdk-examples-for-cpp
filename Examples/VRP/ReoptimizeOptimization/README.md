@@ -12,5 +12,6 @@ When you run the example app, the optimization will be optimized and a new soltu
 ## How it works
 
 1. Create a `ProgressListener`, a `vrp::Service` a `vrp::RouteList` and a `vrp::Request`.
-2. Call the `reoptimizeOptimization()` method from the `vrp::Service` using the `vrp::RouteList` from 1.), the ID of the optimization that you will be reoptimized and the `ProgressListener`.
-3. Check if the associated request has reached the finished status. Once completed, you can retrieve the optimization results by calling the `getSolution()` method, which returns a `vrp::RouteList` containing the reoptimized routes.
+2. Retrieve the optimization to reoptimize with `getOptimization()` from the `vrp::Service`, using the optimization id, into a `vrp::Optimization`.
+3. Call the `reoptimize()` method on the `vrp::Optimization` from 2.) using the `ProgressListener` and the `vrp::Request` from 1.).
+4. Check if the associated request has reached the finished status. Once completed, you can retrieve the optimization results by calling the `getSolution()` method, which returns a `vrp::RouteList` containing the reoptimized routes.

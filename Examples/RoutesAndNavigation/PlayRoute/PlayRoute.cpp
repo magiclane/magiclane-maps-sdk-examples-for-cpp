@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2021-2026 Magic Lane International B.V. <info@magiclane.com>
+// SPDX-FileCopyrightText: 2024-2026 Magic Lane International B.V. <info@magiclane.com>
 // SPDX-License-Identifier: Apache-2.0
 //
 // Contact Magic Lane at <info@magiclane.com> for SDK licensing options.
@@ -14,8 +14,11 @@
 #include <API/GEM_SenseDataSource.h>
 #include <API/GEM_SdkSettings.h>
 
+#include <filesystem>
+#include <system_error>
+
 #ifdef _MSC_VER
-	#pragma comment(linker, "/subsystem:windows /ENTRY:mainCRTStartup")
+    #pragma comment( linker, "/subsystem:windows /ENTRY:mainCRTStartup" )
 #endif
 
 namespace
@@ -33,7 +36,31 @@ public:
     {
         auto dest = gem::FileSystem().makePath( gem::FileSystem().removeLastComponent( dataPath ), u"tmp/" );
         gem::FileSystem().createFolder( dest, true );
-        gem::FileSystem().uncompress( dataPath, dest );
+
+        bool bAlreadyExtracted = !gem::FileSystem().scan( dest, u"route.dat" ).files.empty() && !gem::FileSystem().scan( dest, u"*.nmea" ).files.empty();
+        if( bAlreadyExtracted )
+        {
+            // Only reuse the extracted files while they are at least as new as the
+            // archive. Without this check an updated data.zip (e.g. a new .style or
+            // route data) would silently keep playing the stale files extracted from
+            // an older archive.
+            std::error_code ecZip, ecRoute;
+            const auto zipTime = std::filesystem::last_write_time( std::filesystem::path( dataPath.toStdString() ), ecZip );
+            const auto routeTime = std::filesystem::last_write_time( std::filesystem::path( gem::FileSystem().scan( dest, u"route.dat" ).files[0].path.toStdString() ), ecRoute );
+
+            if( !ecZip && !ecRoute && zipTime > routeTime )
+                bAlreadyExtracted = false;
+        }
+        if( !bAlreadyExtracted )
+        {
+            // Remove previously extracted files first: archive contents may have been
+            // renamed between versions (e.g. the .style file), and leftover files would
+            // still be picked up by the wildcard scans below.
+            for( const auto& it : gem::FileSystem().scan( dest, u"*" ).files )
+                gem::FileSystem().deleteFile( it.path );
+
+            gem::FileSystem().uncompress( dataPath, dest );
+        }
 
         auto folder = gem::FileSystem().scan( dest, u"inst*.dat" );
         for( const auto& it : folder.files )
@@ -64,7 +91,7 @@ public:
             if( stream.good() )
             {
                 stream.seekg( 0, std::ios::end );
-                m_route.reserve( int(stream.tellg()) );
+                m_route.reserve( int( stream.tellg() ) );
                 stream.seekg( 0, std::ios::beg );
                 stream.read( m_route.getBytes<char>(), m_route.size() );
             }
@@ -92,7 +119,7 @@ private:
     {
         GEM_LOGI( "Simulation started" );
     }
-    void onNavigationInstructionUpdated( const gem::NavigationInstruction &inst ) override
+    void onNavigationInstructionUpdated( const gem::NavigationInstruction& inst ) override
     {
         GEM_LOGI( "New instruction" );
     }
@@ -109,7 +136,7 @@ private:
     {
         GEM_LOGI( "Nav error: %d", error );
     }
-    
+
     void onRouteUpdated( const gem::Route& route ) override
     {
         GEM_LOGI( "Route updated" );
@@ -125,18 +152,15 @@ private:
         return true;
     }
 
-    void onBetterRouteDetected( const gem::Route& route, int travelTime, int delay, int timeGain ) override
-    {
-    }
+    void onBetterRouteDetected( const gem::Route& route, int travelTime, int delay, int timeGain ) override {}
 
     //IPositionListener
-    void onNewPosition( gem::sense::PositionPtr pos )
+    void onNewPosition( gem::sense::PositionPtr pos ) override
     {
         if( !m_instructions.empty() )
         {
-            if( m_instructions[0].stamp < (gem::Time::getUniversalTime().asInt() - m_startStamp) )
+            if( m_instructions[0].stamp < ( gem::Time::getUniversalTime().asInt() - m_startStamp ) )
             {
-
                 loadInstruction( m_instructions[0].inst );
                 m_instructions.erase( m_instructions.begin() );
             }
@@ -153,6 +177,9 @@ private:
     {
         m_view = view;
         m_view->preferences().setMapStyleByPath( m_stylePath );
+        m_view->preferences().setMapViewPerspective( gem::EMapViewPerspective::MVP_2D );
+        m_view->preferences().followPositionPreferences().setPerspective( gem::EMapViewPerspective::MVP_2D );
+        m_view->preferences().followPositionPreferences().setViewAngle( 0 );
         loadRoute( true );
     }
 
@@ -168,32 +195,41 @@ private:
 
         auto collector = [&]( gem::MarkerCollection coll, int type )
         {
-            coll.setName( [&]()
+            coll.setName(
+                [&]()
                 {
                     switch( type )
                     {
-                    case gem::GMT_Route:
-                        return kRouteName;
-                    case gem::GMT_Connections:
-                        return kConnectionsName;
-                    default:
-                        return kWaypointsName;
+                        case gem::GMT_Route:
+                            return kRouteName;
+                        case gem::GMT_Connections:
+                            return kConnectionsName;
+                        default:
+                            return kWaypointsName;
                     }
-                }( ) );
-            m_view->preferences().markers().add( coll, [&]()
-                {
-                    switch( type )
-                    {
-                    case gem::GMT_Route:
-                        return gem::MarkerRenderSettings().setPolylineInnerColor( gem::Rgba( 200, 200, 255, 255 ) ).setPolylineInnerSize( 8 ).
-                            setPolylineOuterColor( gem::Rgba( 50, 50, 200, 255 ) ).setPolylineOuterSize( 1 );
-                    case gem::GMT_Connections:
-                        return gem::MarkerRenderSettings().setPolylineInnerColor( gem::Rgba( 100, 100, 100, 255 ) ).setPolylineInnerSize( 5 ).
-                            setPolylineOuterColor( gem::Rgba( 0, 0, 0, 255 ) ).setPolylineOuterSize( 1 );
-                    default:
-                        return gem::MarkerRenderSettings();
-                    }
-                }( ) );
+                }() );
+            gem::MarkerCollectionRenderSettings settings;
+            switch( type )
+            {
+                case gem::GMT_Route:
+                    settings.setPolylineDirectionArrows( true )
+                        .setPolylineDirectionArrowsInnerColor( gem::Rgba::black() )
+                        .setPolylineDirectionArrowsOuterColor( gem::Rgba::white() );
+                    settings.setPolylineInnerColor( gem::Rgba( 49, 235, 34, 255 ) )
+                        .setPolylineInnerSize( 8 )
+                        .setPolylineOuterColor( gem::Rgba( 20, 110, 15, 255 ) )
+                        .setPolylineOuterSize( 1 );
+                    break;
+                case gem::GMT_Connections:
+                    settings.setPolylineInnerColor( gem::Rgba( 100, 100, 100, 255 ) )
+                        .setPolylineInnerSize( 5 )
+                        .setPolylineOuterColor( gem::Rgba( 0, 0, 0, 255 ) )
+                        .setPolylineOuterSize( 1 );
+                    break;
+                default:
+                    break;
+            }
+            m_view->preferences().markers().add( coll, settings );
             area.setUnion( coll.getArea() );
         };
 
@@ -212,10 +248,13 @@ private:
 
         m_route.reset();
 
-        gem::OperationScheduler().timeoutOperation( 1000, [&]()
-        {
-            m_view->startFollowingPosition();
-        }, gem::ProgressListener(), true );
+        gem::OperationScheduler().timeoutOperation(
+            1000,
+            [&]()
+            {
+                m_view->startFollowingPosition( gem::Animation(), -1, 0 );
+            },
+            gem::ProgressListener(), true );
     }
 
     void loadInstruction( const gem::DataBuffer& instData )
@@ -229,12 +268,15 @@ private:
         //delete existing
         m_view->preferences().markers().remove( m_view->preferences().markers().indexOf( kInstructionName ) );
 
-        m_view->preferences().markers().add( inst.first, gem::MarkerRenderSettings().setPolylineInnerColor( gem::Rgba::black() ).setPolylineInnerSize( 10 ).
-            setPolylineOuterColor( gem::Rgba::white() ).setPolylineOuterSize( 1 ) );
+        m_view->preferences().markers().add( inst.first, gem::MarkerRenderSettings()
+                                                             .setPolylineInnerColor( gem::Rgba::black() )
+                                                             .setPolylineInnerSize( 8 )
+                                                             .setPolylineOuterColor( gem::Rgba::white() )
+                                                             .setPolylineOuterSize( 1 ) );
 
         auto bmp = gem::IBitmap::produce( gem::Size( 100, 100 ), gem::EImagePixelFormat::ARGB_8888 );
-        inst.second.render( *bmp, gem::AbstractGeometryImageRenderSettings( gem::Rgba( 255, 255, 255, 255 ), gem::Rgba( 0, 0, 0, 255 ),
-            gem::Rgba( 180, 180, 180, 255 ), gem::Rgba( 180, 180, 180, 255 ) ) );
+        inst.second.render( *bmp, gem::AbstractGeometryImageRenderSettings( gem::Rgba( 255, 255, 255, 255 ), gem::Rgba( 0, 0, 0, 255 ), gem::Rgba( 180, 180, 180, 255 ),
+                                                                            gem::Rgba( 180, 180, 180, 255 ) ) );
         if( m_AGTexture != -1 )
             m_view->extensions().deleteTexture( m_AGTexture );
         m_AGTexture = m_view->extensions().createTexture( *bmp );
@@ -252,39 +294,32 @@ private:
     gem::LargeInteger m_startStamp = 0;
     gem::String m_stylePath;
     int m_AGTexture = -1;
-
 };
 int main( int argc, char** argv )
 {
     // Get new project API token from:
     // https://developer.magiclane.com/api/projects
-    std::string projectApiToken = "";
+    Environment::HandleHelpOption( argc, argv );
 
-#if defined(API_TOKEN)
-    projectApiToken = std::string( API_TOKEN );
-#else
-    auto value = std::getenv( "GEM_TOKEN" );
-    if( value != nullptr )
-        projectApiToken = value;
-#endif
+    std::string projectApiToken = Environment::ResolveApiToken( argc, argv );
 
     // Sdk objects can be created & used below this line
-    Environment::SdkSession session(projectApiToken, { argc > 1 ? argv[1] : "" }); // SDK API debug logging path 
+    Environment::SdkSession session( projectApiToken, { argc > 1 && argv[1][0] != '-' ? argv[1] : "" } ); // SDK API debug logging path
 
-	if (GEM_GET_API_ERROR() != gem::KNoError) // check for errors after session creation
-		return GEM_GET_API_ERROR();
-
+    if( GEM_GET_API_ERROR() != gem::KNoError ) // check for errors after session creation
+        return GEM_GET_API_ERROR();
 
     gem::SdkSettings().setAllowConnection( false, gem::OffboardListener() );
 
     auto sdkExamplesPath = Environment::GetInstance().GetSDKExamplesPath();
-    auto srcZipPath = gem::FileSystem().makePath(sdkExamplesPath.c_str(), u"Examples", u"RoutesAndNavigation", u"PlayRoute", u"data.zip");
+    auto srcZipPath = gem::FileSystem().makePath( sdkExamplesPath.c_str(), u"Examples", u"RoutesAndNavigation", u"PlayRoute", u"data.zip" );
 
-    MyListener listener( gem::String( argc > 1 ? argv[1] : srcZipPath) );
-    
+    MyListener listener( gem::String( argc > 1 ? argv[1] : srcZipPath ) );
+
     // Create a map view
     CTouchEventListener pTouchEventListener;
-    gem::StrongPointer<gem::MapView> mapView = gem::MapView::produce(session.produceOpenGLContext(Environment::WindowFrameworks::Available, "PlayRoute", &pTouchEventListener), &listener); 
+    gem::StrongPointer<gem::MapView> mapView = gem::MapView::produce( session.produceOpenGLContext( Environment::WindowFrameworks::Available, "PlayRoute", &pTouchEventListener ),
+                                                                      &listener );
     if( !mapView )
     {
         GEM_LOGE( "Error creating gem::MapView: %d", GEM_GET_API_ERROR() );

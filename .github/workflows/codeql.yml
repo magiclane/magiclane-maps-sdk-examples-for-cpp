@@ -1,0 +1,76 @@
+name: "CodeQL"
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    name: Analyze C++ examples
+    runs-on: windows-latest
+    timeout-minutes: 180
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Locate vcpkg and CMake prerequisites
+        shell: pwsh
+        run: |
+          "VCPKG_ROOT=$env:VCPKG_INSTALLATION_ROOT" >> $env:GITHUB_ENV
+          cmake --version
+
+      - name: Restore vcpkg binary cache
+        uses: actions/cache@v4
+        with:
+          path: ~\AppData\Local\vcpkg\archives
+          key: vcpkg-${{ runner.os }}-${{ hashFiles('vcpkg.json', 'vcpkg-configuration.json', 'vcpkg_overlays/**') }}
+          restore-keys: |
+            vcpkg-${{ runner.os }}-
+
+      - name: Download and unpack the Maps SDK
+        shell: pwsh
+        env:
+          MAGICLANE_DOWNLOAD_KEY: ${{ secrets.MAGICLANE_DOWNLOAD_KEY }}
+          SDK_URL: ${{ vars.MAGICLANE_SDK_WIN_URL }}
+        run: |
+          if (-not $env:SDK_URL) { throw "vars.MAGICLANE_SDK_WIN_URL is not configured" }
+          curl.exe -fL --retry 3 -o sdk.zip -H "Authorization: Bearer $env:MAGICLANE_DOWNLOAD_KEY" "$env:SDK_URL"
+          tar -xf sdk.zip --strip-components=1 -C SDK
+          Remove-Item sdk.zip
+          if (-not (Test-Path "SDK/lib/cmake/GEM")) { throw "Unexpected SDK archive layout" }
+
+      - name: Configure
+        shell: pwsh
+        run: cmake --preset windows-sdl-vs2022
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v4
+        with:
+          languages: c-cpp
+          build-mode: manual
+          queries: security-extended
+          config: |
+            paths-ignore:
+              - SDK
+              - BUILD
+              - "**/imgui_impl_*"
+
+      - name: Build all examples
+        shell: pwsh
+        run: cmake --build --preset windows-sdl-vs2022-release-all --parallel
+
+      - name: Perform CodeQL analysis
+        uses: github/codeql-action/analyze@v4
+        with:
+          category: "/language:c-cpp"

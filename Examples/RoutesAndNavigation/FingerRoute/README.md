@@ -15,8 +15,12 @@ Double-click twice to activate draw mode, then click and drag a route from one p
 
 ## How it works
 
-1. Create a `MapServiceListener`, `OpenGLContext`, `Screen` and `MapView`.
-2. Create a `RouteList`, a `LandmarkList` with two Landmarks in it and a `RoutePreferences` object.
-3. Call the `RoutingService` using `RouteList`, `LandmarkList`, `RoutePreferences` and the progress listener.
-4. Once the route calculation operation completes, add the first calculated route to the `MapViewPreferences` routes collection.
-5. Instruct the `MapView` to center on the first route.
+1. Create a custom touch event listener derived from `CTouchEventListener` which intercepts the touch events, and a `MapView` with it.
+2. A double click (or two double clicks) arms draw mode: while it is armed, the map's normal pan gesture is suppressed and the touch events are
+   used for drawing instead.
+3. While the finger / mouse button is down, each move event's screen position is converted to WGS coordinates using `mapView->transformScreenToWgs()`
+   and appended as a `gem::Landmark` waypoint (skipping consecutive identical positions). In the two-waypoint mode (armed with two double clicks)
+   only the first position and the release position are kept.
+4. When the finger is lifted / the mouse button is released, the collected waypoints are used to calculate a route with
+   `gem::RoutingService().calculateRoute()`, and a `ProgressListener` is used to detect when the calculation is complete.
+5. If a route results, it is added to the map with `mapView->preferences().routes().add()` and the map centers on it using `mapView->centerOnRoute()`.

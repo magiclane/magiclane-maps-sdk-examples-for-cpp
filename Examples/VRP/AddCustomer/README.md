@@ -18,7 +18,7 @@ When you run the example app, a customer will be saved.
 ### To display the customer
 
 1. Create a `Landmark` and add it to a `LandmarkList`.
-2. Create a `MapServiceListener`, `OpenGLContext` and `MapView`.
+2. Create a `MapViewListenerImpl`, `OpenGLContext` and `MapView`.
 3. Instruct the `MapView` to highlight the `LandmarkList` from 1.).
 4. Instruct the `MapView` to center on the customer's coordinates.
 5. Allow the application to run until the map view is fully loaded.

@@ -24,13 +24,13 @@ This causes the position indicator to play back the previous navigation along th
 1. Create a custom navigation listener derived from `gem::INavigationListener` to receive navigation events, such as started, waypoint reached, or destination reached
 2. Create an instance of a `CTouchEventListener` to make the map interactive, enabling touch events such as pan and zoom
 3. Create an instance of `MapView` producing an OpenGL context using ImGUI, passing in the touch event listener, and a custom GUI function, `getUiRender` 
-4. The custom GUI function loads the pre-recorded navigation in NMEA format using `gem::sense::produceLogDataSource();`
+4. The custom GUI function loads the pre-recorded navigation in NMEA format using `gem::sense::DataSourceFactory::produceLog();`
 5. The custom GUI function has a button to calculate a route; this loads the waypoints from the GPX file using `gem::RouteBookmarks::setWaypointTrackData()`
    and then calculates the route using `gem::RoutingService().calculateRoute()`; a `ProgressListener` is used to detect when the route calculation is complete,
    and if the result, stored using a `gem::RouteList`, contains at least one route, the first route, at index 0, is added to the map to be rendered,
    and the map centers on it, using `mapView->centerOnRoute()`
 6. The custom GUI function has a button so the user can start navigation along the route, starting both playback of the NMEA data using
-   `dataSourceNMEA.first.get()->start();` and enable navigation, `gem::NavigationService().startNavigation()` with buttons to also pause, resume and stop navigation
+   `dataSourceNMEA.get()->start();` and enable navigation, `gem::NavigationService().startNavigation()` with buttons to also pause, resume and stop navigation
 7. There is also a follow position button, to resume following the position indicator along the route, if the map is panned, which causes an exit from
    follow position mode; this is resumed using `mapView->startFollowingPosition();`
 

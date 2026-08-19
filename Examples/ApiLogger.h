@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2021-2026 Magic Lane International B.V. <info@magiclane.com>
+// SPDX-FileCopyrightText: 2022-2026 Magic Lane International B.V. <info@magiclane.com>
 // SPDX-License-Identifier: Apache-2.0
 //
 // Contact Magic Lane at <info@magiclane.com> for SDK licensing options.
@@ -24,13 +24,13 @@ public:
             m_logStream->close();
     }
 
-    virtual void onLog( int logLevel, char* logText, unsigned logTextSize )
+    void onLog( int logLevel, char* logText, unsigned logTextSize ) override
     {
         if( m_logStream )
-            (*m_logStream) << std::string( logText, logTextSize ) << std::endl;
+            ( *m_logStream ) << std::string( logText, logTextSize ) << std::endl;
     }
 
-    virtual int onGetLogLevel() const
+    int onGetLogLevel() const override
     {
         return gem::ELogLevel::LogInfo;
     }

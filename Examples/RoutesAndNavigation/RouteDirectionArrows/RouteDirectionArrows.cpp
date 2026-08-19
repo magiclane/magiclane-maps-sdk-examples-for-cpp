@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2021-2026 Magic Lane International B.V. <info@magiclane.com>
+// SPDX-FileCopyrightText: 2024-2026 Magic Lane International B.V. <info@magiclane.com>
 // SPDX-License-Identifier: Apache-2.0
 //
 // Contact Magic Lane at <info@magiclane.com> for SDK licensing options.
@@ -19,34 +19,34 @@ class MyNavigationListener : public gem::INavigationListener
 private:
     void onNavigationStarted() override
     {
-        GEM_LOGI("Simulation started");
+        GEM_LOGI( "Simulation started" );
     }
-    void onNavigationInstructionUpdated(const gem::NavigationInstruction& inst) override
+    void onNavigationInstructionUpdated( const gem::NavigationInstruction& inst ) override
     {
-        GEM_LOGI("New instruction");
+        GEM_LOGI( "New instruction" );
     }
-    void onWaypointReached(const gem::Landmark& lmk) override
+    void onWaypointReached( const gem::Landmark& lmk ) override
     {
-        GEM_LOGI("Intermediary destination reached");
+        GEM_LOGI( "Intermediary destination reached" );
     }
-    void onDestinationReached(const gem::Landmark& lmk) override
+    void onDestinationReached( const gem::Landmark& lmk ) override
     {
-        GEM_LOGI("Final destination reached");
-    }
-
-    void onNavigationError(int error) override
-    {
-        GEM_LOGI("Nav error: %d", error);
+        GEM_LOGI( "Final destination reached" );
     }
 
-    void onRouteUpdated(const gem::Route& route) override
+    void onNavigationError( int error ) override
     {
-        GEM_LOGI("Route updated");
+        GEM_LOGI( "Nav error: %d", error );
     }
 
-    void onNavigationSound(gem::ISound const& sound) override
+    void onRouteUpdated( const gem::Route& route ) override
     {
-        GEM_LOGI("Nav sound play request");
+        GEM_LOGI( "Route updated" );
+    }
+
+    void onNavigationSound( gem::ISound const& sound ) override
+    {
+        GEM_LOGI( "Nav sound play request" );
     }
 
     bool canPlayNavigationSound() override
@@ -54,28 +54,29 @@ private:
         return true;
     }
 
-    void onBetterRouteDetected(const gem::Route& route, int travelTime, int delay, int timeGain) override
-    {
-    }
+    void onBetterRouteDetected( const gem::Route& route, int travelTime, int delay, int timeGain ) override {}
 };
 
 // This thread demonstrates active detection of the position indicator presence within the viewport
 bool navThreadStop = false;
-void navThread(std::string navThread, gem::StrongPointer<gem::MapView> mapView)
+namespace
 {
-    auto positionArrow = gem::MapSceneObject::getDefPositionTracker().first;
-    bool isPositionArrowVisible = true;
-
-    while ( !navThreadStop )
+    void navThread( std::string navThread, gem::StrongPointer<gem::MapView> mapView )
     {
-        auto currentTime = std::chrono::system_clock::now().time_since_epoch();
-        auto currentTimeMs = std::chrono::duration_cast<std::chrono::milliseconds>(currentTime).count();
-        if (currentTimeMs % 500 == 0)
+        auto positionArrow = gem::MapSceneObject::getDefPositionTracker().first;
+        bool isPositionArrowVisible = true;
+
+        while( !navThreadStop )
         {
-            isPositionArrowVisible = mapView.get()->checkObjectVisibility(*positionArrow);
-            GEM_LOGE("POSITION ARROW IS %s THE VIEWPORT # # #", isPositionArrowVisible ? "WITHIN" : "OUTSIDE");
+            auto currentTime = std::chrono::system_clock::now().time_since_epoch();
+            auto currentTimeMs = std::chrono::duration_cast<std::chrono::milliseconds>( currentTime ).count();
+            if( currentTimeMs % 500 == 0 )
+            {
+                isPositionArrowVisible = mapView.get()->checkObjectVisibility( *positionArrow );
+                GEM_LOGE( "POSITION ARROW IS %s THE VIEWPORT # # #", isPositionArrowVisible ? "WITHIN" : "OUTSIDE" );
+            }
+            std::this_thread::sleep_for( std::chrono::milliseconds( 10 ) );
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
 }
 
@@ -83,27 +84,21 @@ int main( int argc, char** argv )
 {
     // Get new project API token from:
     // https://developer.magiclane.com/api/projects
-    std::string projectApiToken = "";
+    Environment::HandleHelpOption( argc, argv );
 
-#if defined(API_TOKEN)
-    projectApiToken = std::string( API_TOKEN );
-#else
-    auto value = std::getenv( "GEM_TOKEN" );
-    if( value != nullptr )
-        projectApiToken = value;
-#endif
+    std::string projectApiToken = Environment::ResolveApiToken( argc, argv );
 
     // Sdk objects can be created & used below this line
-    Environment::SdkSession session(projectApiToken, { argc > 1 ? argv[1] : "" }); // SDK API debug logging path 
+    Environment::SdkSession session( projectApiToken, { argc > 1 && argv[1][0] != '-' ? argv[1] : "" } ); // SDK API debug logging path
 
-	if (GEM_GET_API_ERROR() != gem::KNoError) // check for errors after session creation
-		return GEM_GET_API_ERROR();
-
+    if( GEM_GET_API_ERROR() != gem::KNoError ) // check for errors after session creation
+        return GEM_GET_API_ERROR();
 
     // Create an interactive map view
     CTouchEventListener pTouchEventListener;
-    gem::StrongPointer<gem::MapView> mapView = gem::MapView::produce(session.produceOpenGLContext(Environment::WindowFrameworks::Available, "RouteDirectionArrows", &pTouchEventListener)); 
-    if ( !mapView )
+    gem::StrongPointer<gem::MapView> mapView = gem::MapView::produce(
+        session.produceOpenGLContext( Environment::WindowFrameworks::Available, "RouteDirectionArrows", &pTouchEventListener ) );
+    if( !mapView )
     {
         GEM_LOGE( "Error creating gem::MapView: %d", GEM_GET_API_ERROR() );
     }
@@ -114,14 +109,14 @@ int main( int argc, char** argv )
     auto sdkExamplesPath = Environment::GetInstance().GetSDKExamplesPath();
     auto sdkCachePath = Environment::GetInstance().GetCachePath();
 
-    auto dstCacheSceneResPath = gem::FileSystem().makePath(sdkCachePath.c_str(), u"Data", u"SceneRes/");
-    gem::FileSystem().createFolder(dstCacheSceneResPath, true);
-    auto srcStylePath = gem::FileSystem().makePath(sdkExamplesPath.c_str(), u"Examples", u"RoutesAndNavigation", u"RouteDirectionArrows", u"MobileRouteArrow.style");
+    auto dstCacheSceneResPath = gem::FileSystem().makePath( sdkCachePath.c_str(), u"Data", u"SceneRes/" );
+    gem::FileSystem().createFolder( dstCacheSceneResPath, true );
+    auto srcStylePath = gem::FileSystem().makePath( sdkExamplesPath.c_str(), u"Examples", u"RoutesAndNavigation", u"RouteDirectionArrows", u"MobileRouteArrow.style" );
 
     int ret;
-    if ((ret = gem::FileSystem().copyFile(srcStylePath, dstCacheSceneResPath)) != gem::KNoError)
+    if( ( ret = gem::FileSystem().copyFile( srcStylePath, dstCacheSceneResPath ) ) != gem::KNoError )
     {
-        GEM_LOGE("Error copy style resource (%d)", GEM_GET_API_ERROR());
+        GEM_LOGE( "Error copy style resource (%d)", GEM_GET_API_ERROR() );
     }
 
     ////////////////////////////////////
@@ -129,8 +124,8 @@ int main( int argc, char** argv )
     // (in online map studio before saving the map style)
     ////////////////////////////////////
 
-    auto srcMapStyle = gem::FileSystem().makePath(dstCacheSceneResPath, "MobileRouteArrow.style");
-    mapView->preferences().setMapStyleByPath(srcMapStyle);
+    auto srcMapStyle = gem::FileSystem().makePath( dstCacheSceneResPath, "MobileRouteArrow.style" );
+    mapView->preferences().setMapStyleByPath( srcMapStyle );
 
     ////////////////////////////////////
     // the color of the direction arrows can be set to something other than they are set in the layer;
@@ -138,9 +133,9 @@ int main( int argc, char** argv )
     ////////////////////////////////////
 
     gem::RouteRenderSettings routeSettings;
-    routeSettings.setDirectionArrowInnerColor(gem::Rgba(255, 0, 255, 224));
-    routeSettings.setDirectionArrowOuterColor(gem::Rgba(0, 255, 255, 224));
-    routeSettings.setOption(gem::ERouteRenderOptions::RRS_ShowDirectionArrows);
+    routeSettings.setDirectionArrowInnerColor( gem::Rgba( 255, 0, 255, 224 ) );
+    routeSettings.setDirectionArrowOuterColor( gem::Rgba( 0, 255, 255, 224 ) );
+    routeSettings.setOption( gem::ERouteRenderOptions::RRS_ShowDirectionArrows );
 
     ////////////////////////////////////
     // calculate, render and simulate navigation on a route
@@ -149,36 +144,41 @@ int main( int argc, char** argv )
     // At least 2 waypoints define the route, the first is the departure position, and the last is the destination.
     // There can be zero or more intermediate waypoints through which the route passes in the order they are listed.
     // The coordinates are {latitude,longitude} in degrees; the landmark name is optional and can be an empty string.
-    gem::LandmarkList waypoints({ 
-        { "", { 48.526059 , 7.735456 } },
-        { "", { 48.525613 , 7.735448 } },
-        { "", { 48.525995 , 7.733916 } },
-        { "", { 48.526143 , 7.733535 } },
-        });
+    gem::LandmarkList waypoints( {
+        { "", { 48.526059, 7.735456 } },
+        { "", { 48.525613, 7.735448 } },
+        { "", { 48.525995, 7.733916 } },
+        { "", { 48.526143, 7.733535 } },
+    } );
 
     // Compute route using these preferences: car / fastest / without alternatives in result
     gem::RouteList routes;
     ProgressListener routeListener;
     auto navListener = gem::StrongPointerFactory<MyNavigationListener>();
-    gem::RoutingService().calculateRoute(routes, waypoints,
-        gem::RoutePreferences().setTransportMode(gem::RTM_Car).setRouteType(gem::RT_Fastest).setAlternativesSchema(gem::AS_Never), &routeListener);
+    gem::RoutingService().calculateRoute(
+        routes, waypoints, gem::RoutePreferences().setTransportMode( gem::RTM_Car ).setRouteType( gem::RT_Fastest ).setAlternativesSchema( gem::AS_Never ), &routeListener );
 
     // Wait until route calculation finished & check success
-    if (WAIT_UNTIL(std::bind(&ProgressListener::IsFinished, &routeListener), 30000) && routeListener.GetError() == gem::KNoError && !routes.empty())
+    if( WAIT_UNTIL( std::bind( &ProgressListener::IsFinished, &routeListener ), 30000 ) && routeListener.GetError() == gem::KNoError && !routes.empty() )
     {
+        GEM_LOGI( "Route calculated successfully (%d route(s)), rendering the first one", ( int ) routes.size() );
         // Add the first resulting route (at index 0) to map view
-        mapView->preferences().routes().add(routes[0]);
-        mapView->preferences().routes().setRenderSettings(routes[0], routeSettings);
-        mapView->centerOnRoute(routes[0], gem::Rect(), gem::Animation(gem::AnimationLinear, gem::ProgressListener(), 2000));
+        mapView->preferences().routes().add( routes[0] );
+        mapView->preferences().routes().setRenderSettings( routes[0], routeSettings );
+        mapView->centerOnRoute( routes[0], gem::Rect(), gem::Animation( gem::AnimationLinear, gem::ProgressListener(), 2000 ) );
 
         // Start simulated navigation along the route
-        gem::NavigationService().startSimulation(routes[0], navListener, gem::ProgressListener());
+        gem::NavigationService().startSimulation( routes[0], navListener, gem::ProgressListener() );
 
         // Start follow GPS positions ( generated by the simulation ) - camera follows the position along the route
         mapView->startFollowingPosition();
     }
+    else
+    {
+        GEM_LOGE( "Route calculation failed (err=%d) - nothing to render", routeListener.GetError() );
+    }
 
-    std::thread myNavThread(navThread, "navThread", mapView);
+    std::thread myNavThread( navThread, "navThread", mapView );
 
     WAIT_UNTIL_WINDOW_CLOSE();
 
@@ -188,16 +188,16 @@ int main( int argc, char** argv )
     return 0;
 }
 
-#if ( defined(_WIN32) || defined(_WIN64) ) && !defined(__MINGW32__) && !defined(__MINGW64__)
+#if ( defined( _WIN32 ) || defined( _WIN64 ) ) && !defined( __MINGW32__ ) && !defined( __MINGW64__ )
 
-int WINAPI WinMain( HINSTANCE hInstance, // Instance
-	HINSTANCE hPrevInstance, // Previous Instance
-	LPSTR lpCmdLine, // Command Line Parameters
-	int nCmdShow )
+int WINAPI WinMain( HINSTANCE hInstance,     // Instance
+                    HINSTANCE hPrevInstance, // Previous Instance
+                    LPSTR lpCmdLine,         // Command Line Parameters
+                    int nCmdShow )
 {
-	main( 0, nullptr );
+    main( 0, nullptr );
 
-	return 0;
+    return 0;
 }
 
 #endif

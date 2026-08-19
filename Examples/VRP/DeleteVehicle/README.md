@@ -12,4 +12,5 @@ When you run the example app, a vehicle will be deleted.
 ## How it works
 
 1. Create a `ProgressListener` and `vrp::Service`.
-2. Call the `deleteVehicle()` method from the `vrp::Service` using the vehicle's id and `ProgressListener` and wait for the operation to be done.
+2. Obtain the vehicle to delete. This sample creates a `vrp::Vehicle` and adds it with `addVehicle()` first; you can equally retrieve an existing one (see [Get Vehicle](../GetVehicle) example).
+3. Call the `deleteVehicle()` method from the `vrp::Service` using a list of vehicle ids (`{ vehicle.getId() }`) and the `ProgressListener`, and wait for the operation to be done.

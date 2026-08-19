@@ -17,9 +17,9 @@ When you run the example app, a rectangle territory will be saved.
 
 ### To display the territory
 
-1. Create a `CoordinatesList` and add the territory's coordinates to it.
-2. Create a `MapServiceListener`, `OpenGLContext` and `MapView`.
+1. Create a `CoordinatesList` holding the 4 polygon corners, built from the territory's 2 diagonally opposite coordinates by combining their latitudes and longitudes.
+2. Create a `MapViewListenerImpl`, `OpenGLContext` and `MapView`.
 3. Create a `MarkerCollection` of type Polygon and add the list created at 1.) to it.
-4. Create a `MarkerCollectionDisplaySettings` and set the territory's color to the polygon fill color.
-5. Set the newly created `MarkerCollection` in the markers collections of the map view preferences, together with the `MarkerCollectionDisplaySettings`.
+4. Create a `MarkerCollectionRenderSettings` and set the territory's color to the polygon fill color.
+5. Set the newly created `MarkerCollection` in the markers collections of the map view preferences, together with the `MarkerCollectionRenderSettings`.
 6. Allow the application to run until the map view is fully loaded.

@@ -12,7 +12,7 @@ When you run the example app, in addition to the existing orders, the optimizati
 ## How it works
 
 1. Create a `vrp::Order` with the desired fields for each order that will be added and insert them in a `vrp::OrderList`.
-2. Create a `ProgressListener` and `vrp::Service`.
-3. Retrieve the optimization like in the example `GetOptimization()` in a `vrp::Optimization`.
-4. Call the `optimization.addOrders()` method from `vrp::Optimization` using the list from 1.), a boolean to specify if the optimization should be reoptimized and the `ProgressListener`.
-5. Check if the associated request has reached the finished status. Once completed, you can retrieve the optimization results by calling the `getSolution()` method, which returns a `vrp::RouteList` containing the generated routes.
+2. Create a `ProgressListener`, `vrp::Service` and a `vrp::Request` that will be used to track the request status.
+3. Retrieve the optimization like in the [Get Optimization](../GetOptimization) example, in a `vrp::Optimization`.
+4. Call the `optimization.addOrders()` method from `vrp::Optimization` using the `ProgressListener`, the list from 1.), the `vrp::Request` from 2.) and a boolean to specify if the optimization should be reoptimized (`true` here), in that order.
+5. Check if the associated request has reached the finished status. Once completed, the optimization contains the added orders. This sample stops there; to fetch the resulting routes, call `getSolution()` on the `vrp::Optimization` as shown in the [Get Solution For Optimization](../GetSolutionForOptimization) example.

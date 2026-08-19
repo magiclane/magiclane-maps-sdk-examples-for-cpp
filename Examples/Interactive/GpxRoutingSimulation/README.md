@@ -3,6 +3,7 @@
 This example app demonstrates the following features:
 - Show how to calculate and render a route based on a GPX track as input waypoints
 - Simulate navigation along the route
+- Control the simulation speed with +/- buttons while the simulation is running
 - Use a custom navigation listener to receive navigation events, such as started, waypoint reached, or destination reached
 - Dynamic detection if position arrow indicator is inside or outside the viewport
 
@@ -11,6 +12,8 @@ This example app demonstrates the following features:
 ## How to use the sample
 
 When the example app is run, clicking the first button causes a route to be calculated over the GPX track. The second button starts a navigation simulation along the rendered route.
+
+While the simulation is running, the panel shows - and + buttons together with the current simulation speed: each click halves or doubles the playback speed multiplier, within the limits supported by the SDK.
 
 The follow position button is active if the camera is not following the green position arrow indicator, for example, if the map is panned/moved to one side, to enable resuming follow position mode.
 If the map is panned and the position arrow indicator moves outside the viewport, this is detected and indicated visually with a text message.
@@ -28,9 +31,11 @@ The navigation service simulation function is used to simulate navigation along 
    and if the result, stored using a `gem::RouteList`, contains at least one route, the first route, at index 0, is added to the map to be rendered,
    and the map centers on it, using `mapView->centerOnRoute()`
 5. The custom GUI function has a button so the user can start simulated navigation along the route, using `gem::NavigationService().startSimulation()`
-6. There is also a follow position button, to resume following the position indicator along the route, if the map is panned, which causes an exit from
+6. While the simulation is active, its playback interface is obtained with `gem::PositionService().getPlayback()`; the - and + buttons change the speed
+   with `setSpeedMultiplier()`, clamped between `getMinSpeedMultiplier()` and `getMaxSpeedMultiplier()`, and the current multiplier is displayed
+7. There is also a follow position button, to resume following the position indicator along the route, if the map is panned, which causes an exit from
    follow position mode; this is resumed using `mapView->startFollowingPosition();`
-7. To demonstrate dynamic detection whether the position indicator arrow is inside or outside the viewport, which can happen if the map is panned,
+8. To demonstrate dynamic detection whether the position indicator arrow is inside or outside the viewport, which can happen if the map is panned,
    thus deactivating follow position mode, a separate thread is started. The separate thread, `navThread`, gets a pointer to the position indicator arrow
    using `gem::MapSceneObject::getDefPositionTracker().first` and then checks whether it is in the viewport using `mapView.get()->checkObjectVisibility()`
 

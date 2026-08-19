@@ -9,7 +9,7 @@ This example app demonstrates the following features:
 
 ## How to use the sample
 
-When the example app is run, the scene is viewed from above. When the route calculation is completed a simulation will start.
+When the example app is run, the scene is viewed from above. Clicking the `Simulate navigation on a route` button calculates the route and starts the simulation once the calculation is completed. A `Stop navigation` button ends the simulation.
 
 ## How it works
 

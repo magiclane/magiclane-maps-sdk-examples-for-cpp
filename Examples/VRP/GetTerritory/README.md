@@ -3,7 +3,7 @@
 This example app demonstrates the following features:
 - Get a certain territory.
 
-Check how to update the vehicle in [Update Vehicle](../UpdateVehicle) example, to display it on the map or to have access to the customers inside it in order to create an optimization with them in [Add Polygon Territory](../AddPolygonTerritory) example.
+Check how to update the territory in [Update Territory](../UpdateTerritory) example, to display it on the map or to have access to the customers inside it in order to create an optimization with them in [Add Polygon Territory](../AddPolygonTerritory) example.
 
 ## How to use the sample
 

@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2021-2026 Magic Lane International B.V. <info@magiclane.com>
+// SPDX-FileCopyrightText: 2025-2026 Magic Lane International B.V. <info@magiclane.com>
 // SPDX-License-Identifier: Apache-2.0
 //
 // Contact Magic Lane at <info@magiclane.com> for SDK licensing options.
@@ -9,26 +9,20 @@
 #include <API/GEM_VRP.h>
 #include <API/GEM_MapView.h>
 #include <API/GEM_Markers.h>
-#include<iomanip>
+#include <iomanip>
 
-int main(int argc, char** argv)
+int main( int argc, char** argv )
 {
     // Get new project API token from:
     // https://developer.magiclane.com/api/projects
-    std::string projectApiToken = "";
+    Environment::HandleHelpOption( argc, argv );
 
-#if defined(API_TOKEN)
-    projectApiToken = std::string(API_TOKEN);
-#else
-    auto value = std::getenv("GEM_TOKEN");
-    if (value != nullptr)
-        projectApiToken = value;
-#endif
+    std::string projectApiToken = Environment::ResolveApiToken( argc, argv );
 
     // Sdk objects can be created & used below this line
-    Environment::SdkSession session(projectApiToken, { argc > 1 ? argv[1] : "" }); // SDK API debug logging path 
+    Environment::SdkSession session( projectApiToken, { argc > 1 && argv[1][0] != '-' ? argv[1] : "" } ); // SDK API debug logging path
 
-    if (GEM_GET_API_ERROR() != gem::KNoError)
+    if( GEM_GET_API_ERROR() != gem::KNoError )
         return GEM_GET_API_ERROR();
 
     {
@@ -89,98 +83,104 @@ int main(int argc, char** argv)
 
         // map initialization
         MapViewListenerImpl mapListener;
-        auto oglContext = session.produceOpenGLContext(Environment::WindowFrameworks::Available, "OptimizeSingleVehicle");
-        gem::StrongPointer<gem::MapView> mapView = gem::MapView::produce(oglContext, &mapListener);
+        auto oglContext = session.produceOpenGLContext( Environment::WindowFrameworks::Available, "OptimizeSingleVehicle" );
+        gem::StrongPointer<gem::MapView> mapView = gem::MapView::produce( oglContext, &mapListener );
 
         gem::LandmarkList lmks;
         gem::CoordinatesList coordsList;
 
-        JsonParser parser(input);
+        JsonParser parser( input );
         JsonValue object = parser.parse();
 
-        auto addLandmarks = [&](JsonValue list, gem::Icon::Core icon) {
-            for (auto elem : list.asArray()) {
+        auto addLandmarks = [&]( JsonValue list, gem::Icon::Core icon )
+        {
+            for( auto elem : list.asArray() )
+            {
                 JsonArray loc = elem["location"].asArray();
-                gem::Coordinates coords(loc[0].asNumber(), loc[1].asNumber(), 0.0);
+                gem::Coordinates coords( loc[0].asNumber(), loc[1].asNumber(), 0.0 );
                 gem::Landmark lmk;
-                lmk.setName(elem["alias"].asString());
-                lmk.setCoordinates(coords);
-                lmk.setImage(icon);
-                lmks.push_back(lmk);
-                coordsList.push_back(coords);
+                lmk.setName( elem["alias"].asString() );
+                lmk.setCoordinates( coords );
+                lmk.setImage( icon );
+                lmks.push_back( lmk );
+                coordsList.push_back( coords );
             }
-            };
+        };
 
         // create landmarks for departures, orders and destinations
-        addLandmarks(object["departures"], gem::Icon::Core::GreenBall);
-        addLandmarks(object["orders"], gem::Icon::Core::BlueBall);
-        addLandmarks(object["destinations"], gem::Icon::Core::RedBall);
+        addLandmarks( object["departures"], gem::Icon::Core::GreenBall );
+        addLandmarks( object["orders"], gem::Icon::Core::BlueBall );
+        addLandmarks( object["destinations"], gem::Icon::Core::RedBall );
 
-        // display landmarks on the map    
+        // display landmarks on the map
 
-        mapView->activateHighlight(lmks, gem::HO_ShowLandmark | gem::HO_NoFading);
-        gem::PolygonGeographicArea area(coordsList);
-        mapView->centerOnArea(area, 55);
-        WAIT_UNTIL(std::bind(&MapViewListenerImpl::IsFinished, &mapListener), 15000);
+        mapView->activateHighlight( lmks, gem::HO_ShowLandmark | gem::HO_NoFading );
+        gem::PolygonGeographicArea area( coordsList );
+        mapView->centerOnArea( area, 55 );
+        WAIT_UNTIL( std::bind( &MapViewListenerImpl::IsFinished, &mapListener ), 15000 );
 
         // create optimize request
         gem::vrp::Request request;
-        int ret = serv.optimize(&listener, input, request);
-        WAIT_UNTIL(std::bind(&ProgressListener::IsFinished, &listener), 60000);
+        int ret = serv.optimize( &listener, input, request );
+        WAIT_UNTIL( std::bind( &ProgressListener::IsFinished, &listener ), 60000 );
 
         gem::LargeInteger solutionId = request.entityId;
 
-        WAIT_UNTIL([&]() {
-            serv.getRequest(&listener, request, request.id);
-            WAIT_UNTIL(std::bind(&ProgressListener::IsFinished, &listener), 7000);
-            return request.status == gem::vrp::ERequestStatus::eFinished;
-            }, 120000);
+        WAIT_UNTIL(
+            [&]()
+            {
+                serv.getRequest( &listener, request, request.id );
+                WAIT_UNTIL( std::bind( &ProgressListener::IsFinished, &listener ), 7000 );
+                return request.status == gem::vrp::ERequestStatus::eFinished;
+            },
+            120000 );
 
-        // retrieve solution 
+        // retrieve solution
         std::shared_ptr<std::string> output = std::make_shared<std::string>();
-        ret = serv.getSolutionJson(&listener, solutionId, output);
-        WAIT_UNTIL(std::bind(&ProgressListener::IsFinished, &listener), 10000);
+        ret = serv.getSolutionJson( &listener, solutionId, output );
+        WAIT_UNTIL( std::bind( &ProgressListener::IsFinished, &listener ), 10000 );
 
-        // check if response was succesful and display routes on the map
-        if (listener.IsFinished() && listener.GetError() == gem::KNoError && ret == gem::KNoError)
+        // check if response was successful and display routes on the map
+        if( listener.IsFinished() && listener.GetError() == gem::KNoError && ret == gem::KNoError )
         {
             std::cout << "Problem optimized successfully" << std::endl;
 
-            JsonParser parser2(*output);
+            JsonParser parser2( *output );
             JsonValue object2 = parser2.parse();
             JsonArray routesList = object2["routes"].asArray();
 
-            // Draw each route with different color 
+            // Draw each route with different color
             std::vector<gem::Rgba> baseColors = {
-                gem::Rgba(255, 0, 0, 255),     // red
-                gem::Rgba(0, 255, 0, 255),     // green
-                gem::Rgba(0, 0, 255, 255),     // blue
-                gem::Rgba(255, 255, 0, 255),   // yellow
-                gem::Rgba(255, 0, 255, 255),   // magenta
-                gem::Rgba(0, 255, 255, 255)    // cyan
+                gem::Rgba( 255, 0, 0, 255 ),   // red
+                gem::Rgba( 0, 255, 0, 255 ),   // green
+                gem::Rgba( 0, 0, 255, 255 ),   // blue
+                gem::Rgba( 255, 255, 0, 255 ), // yellow
+                gem::Rgba( 255, 0, 255, 255 ), // magenta
+                gem::Rgba( 0, 255, 255, 255 )  // cyan
             };
 
             gem::CoordinatesList allShapes;
-            for (size_t i = 0; i < routesList.size(); ++i) {
-                gem::CoordinatesList shape = Utils::decodePolyline(routesList[i]["shape"].asString());
-                auto col = gem::MarkerCollection(gem::EMarkerType::MT_Polyline, "route" + std::to_string(i + 1));
-                col.add(gem::Marker(shape));
+            for( size_t i = 0; i < routesList.size(); ++i )
+            {
+                gem::CoordinatesList shape = Utils::decodePolyline( routesList[i]["shape"].asString() );
+                auto col = gem::MarkerCollection( gem::EMarkerType::MT_Polyline, "route" + std::to_string( i + 1 ) );
+                col.add( gem::Marker( shape ) );
                 gem::MarkerCollectionRenderSettings settings;
                 settings.polylineInnerColor = baseColors[i % baseColors.size()];
-                mapView->preferences().markers().add(col, settings);
+                mapView->preferences().markers().add( col, settings );
 
-                allShapes.insert(allShapes.end(), shape.begin(), shape.end());
+                allShapes.insert( allShapes.end(), shape.begin(), shape.end() );
             }
 
+            ret = WAIT_UNTIL( std::bind( &MapViewListenerImpl::IsFinished, &mapListener ), 15000 );
 
-            ret = WAIT_UNTIL(std::bind(&MapViewListenerImpl::IsFinished, &mapListener), 15000);
-
-            gem::PolygonGeographicArea routeArea(allShapes);
-            mapView->centerOnArea(routeArea, 55);
-            WAIT_UNTIL(std::bind(&MapViewListenerImpl::IsFinished, &mapListener), 15000);
+            gem::PolygonGeographicArea routeArea( allShapes );
+            mapView->centerOnArea( routeArea, 55 );
+            WAIT_UNTIL( std::bind( &MapViewListenerImpl::IsFinished, &mapListener ), 15000 );
             WAIT_UNTIL_WINDOW_CLOSE();
         }
-        else {
+        else
+        {
             std::cout << "Optimization failed." << std::endl;
         }
     }
@@ -188,14 +188,14 @@ int main(int argc, char** argv)
     return 0;
 }
 
-#if ( defined(_WIN32) || defined(_WIN64) ) && !defined(__MINGW32__) && !defined(__MINGW64__)
+#if ( defined( _WIN32 ) || defined( _WIN64 ) ) && !defined( __MINGW32__ ) && !defined( __MINGW64__ )
 
-int WINAPI WinMain(HINSTANCE hInstance, // Instance
-    HINSTANCE hPrevInstance, // Previous Instance
-    LPSTR lpCmdLine, // Command Line Parameters
-    int nCmdShow)
+int WINAPI WinMain( HINSTANCE hInstance,     // Instance
+                    HINSTANCE hPrevInstance, // Previous Instance
+                    LPSTR lpCmdLine,         // Command Line Parameters
+                    int nCmdShow )
 {
-    main(0, nullptr);
+    main( 0, nullptr );
 
     return 0;
 }

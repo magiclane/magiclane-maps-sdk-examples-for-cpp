@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: "Maps SDK for C++ documentation"
+    url: https://developer.magiclane.com/docs/cpp
+    about: Guides and API reference for the Maps SDK for C++.
+  - name: "Projects and API keys"
+    url: https://developer.magiclane.com/api/projects
+    about: Manage your Magic Lane projects and API keys.

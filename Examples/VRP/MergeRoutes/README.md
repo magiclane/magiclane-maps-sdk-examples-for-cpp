@@ -19,7 +19,7 @@ When you run the example app, the merged route will be returned.
 
 ### To display the orders and routes on the map
 
-1. Create a `MapServiceListener`, `OpenGLContext` and `MapView`.
+1. Create a `MapViewListenerImpl`, `OpenGLContext` and `MapView`.
 2. Create a `LandmarkList` and a `CoordinatesList` from the route's orders and a `PolygonGeographicArea` from the `CoordinatesList`.
 3. Instruct the `MapView` to highlight the `LandmarkList` from 2.) to print the orders.
 4. Instruct the `MapView` to center on the `PolygonGeographicArea`.

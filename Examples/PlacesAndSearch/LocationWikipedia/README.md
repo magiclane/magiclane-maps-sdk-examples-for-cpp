@@ -14,7 +14,7 @@ Click and hold the left mouse button (or long tap) on top of one such landmark. 
 
 1. A `IMapViewListener` is implemented which handles the `onLongDown` event.
 2. A `MapView` is produced and the listener from 1 is passed.
-3. The `MapView` centers on a location where landmakrs with Wikipedia info are located.
+3. The `MapView` centers on a location where landmarks with Wikipedia info are located.
 4. The user must long left click on a landmark which has Wikipedia info. `onLongDown` event from #1 will get called.
 5. We iterate the `cursorSelectionLandmarks` and fetch the Wikipedia info for the first landmark. We use a custom implementation of progress listener that packs fetching of Wikipedia info inside it.
 6. When the progress listener `notifyComplete` call is received, the Wikipedia title and description is printed.

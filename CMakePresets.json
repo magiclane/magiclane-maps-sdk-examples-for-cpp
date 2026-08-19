@@ -16,7 +16,7 @@
                     "type": "FILEPATH",
                     "value": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
                 },
-                "API_TOKEN": "$env{API_TOKEN}",
+                "GEM_TOKEN": "$env{GEM_TOKEN}",
                 "MAPS_SDK_DATA_PATH": "${sourceDir}/SDK/share",
                 "VCPKG_FEATURE_FLAGS": "versions",
                 "CMAKE_CONFIGURATION_TYPES": "Debug;Release;RelWithDebInfo"

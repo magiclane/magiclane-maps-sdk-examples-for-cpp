@@ -3,7 +3,7 @@
 This example app demonstrates the following features:
 - Get a certain route.
 
-Check how to display on the map in [Add Optimization](../AddOptimization) example or to make changes to it, see the [Update Route](../UpdateRoute) example.
+Check how to display on the map in [Add Full Optimization](../AddFullOptimization) example or to make changes to it, see the [Update Route](../UpdateRoute) example.
 
 ## How to use the sample
 
