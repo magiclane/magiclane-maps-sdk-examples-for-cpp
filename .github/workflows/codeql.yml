@@ -1,3 +1,4 @@
+# Security-vulnerability scanning per GitHub's curated CWE-based ruleset
 name: "CodeQL"
 
 on:
