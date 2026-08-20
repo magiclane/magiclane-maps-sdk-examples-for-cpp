@@ -113,7 +113,7 @@ Step 2. Extract SDK to the predefined folder (SDK)
 
 Step a. On Debian/Ubuntu, make sure that you have installed the following packages
 
-```$ apt install autoconf autoconf-archive automake libtool cmake ninja-build python3 xorg-dev libglu1-mesa-dev libegl1-mesa-dev```
+```$ apt install autoconf autoconf-archive automake libtool cmake ninja-build python3 python3-jinja2 xorg-dev libglu1-mesa-dev libegl1-mesa-dev```
 
 Step b. Set up vcpkg package manager:
 
