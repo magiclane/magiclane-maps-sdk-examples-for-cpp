@@ -13,7 +13,7 @@ concurrency:
 jobs:
   analyze:
     name: Analyze C++ examples
-    runs-on: windows-latest
+    runs-on: windows-2022
     timeout-minutes: 180
     permissions:
       contents: read
