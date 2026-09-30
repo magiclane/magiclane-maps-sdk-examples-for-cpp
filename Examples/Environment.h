@@ -157,6 +157,32 @@ public:
         return m_offboardListener;
     }
 
+    // Activation-state notifications raised by auto-activation SDKs (gem::ISdkExceptions::onSdkNotActivated /
+    // onSdkActivated). An example registers callbacks to react, e.g. to show or hide an "SDK not activated" watermark.
+    // Register BEFORE creating the SdkSession: the SDK may already report "not activated" during initialization when a
+    // token is provided but the device is offline. Callbacks may be invoked from SDK threads - keep them cheap and
+    // thread-safe (e.g. set an atomic flag the UI thread consumes). Defaults to no-op, so other examples are unaffected.
+    using NotActivatedCallback = std::function<void( gem::ESdkNotActivatedReason reason )>;
+    using ActivatedCallback = std::function<void()>;
+
+    void SetActivationStateCallbacks( NotActivatedCallback onNotActivated, ActivatedCallback onActivated )
+    {
+        m_onSdkNotActivated = std::move( onNotActivated );
+        m_onSdkActivated = std::move( onActivated );
+    }
+
+    void NotifySdkNotActivated( gem::ESdkNotActivatedReason reason )
+    {
+        if( m_onSdkNotActivated )
+            m_onSdkNotActivated( reason );
+    }
+
+    void NotifySdkActivated()
+    {
+        if( m_onSdkActivated )
+            m_onSdkActivated();
+    }
+
     std::string GetSDKExamplesPath();
 
     std::string GetDataPath();
@@ -175,6 +201,9 @@ private:
     gem::StrongPointer<OpenGLContext> m_openGLContext;
 
     std::shared_ptr<OffboardListenerImpl> m_offboardListener;
+
+    NotActivatedCallback m_onSdkNotActivated;
+    ActivatedCallback m_onSdkActivated;
 
     // Command line captured by HandleHelpOption / ResolveApiToken so shared
     // options (--size, --rotation, --ui_backend) reach ProduceOpenGLContext

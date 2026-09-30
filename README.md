@@ -12,12 +12,14 @@ This set of individual, use-case based projects is designed to be cloned by deve
 * [Points Marker](Examples/3DScene/PointsMarker) - Show a collection of points on map
 * [Polygon Marker](Examples/3DScene/PolygonMarker) - Show a collection of polygons on map
 * [Polyline Marker](Examples/3DScene/PolylineMarker) - Show a collection of polylines on map
+* [[Interactive] Activation Modes](Examples/Interactive/ActivationModes) - Show every way an auto-activation SDK becomes activated (online auto-activation, manual offline activation/deactivation via QR or REST) and how to reflect the activation state with a watermark
 * [[Interactive] Calculate Route](Examples/Interactive/CalculateRoute) - Calculate a route between two given pairs of coordinates then display it on map
 * [[Interactive] Change Map Style](Examples/Interactive/ChangeMapStyle) - Show how to change map style
 * [[Interactive] Content Download](Examples/Interactive/ContentDownload) - Show how to download maps, voices and map styles from the MagicLane Online Store for offline use
 * [[Interactive] Export Track](Examples/Interactive/ExportTrack) - Show how to save a navigation track in `.gpx`, `.kml`, `.geojson` or `.nmea` format
 * [[Interactive] GPX NMEA Playback](Examples/Interactive/GpxNmeaPlayback) - Show how to playback a pre-recorded GPS-log in NMEA format
 * [[Interactive] GPX Routing Simulation](Examples/Interactive/GpxRoutingSimulation) - Show how to calculate and render a route based on a GPX track as input waypoints and start a simulated navigation on that route
+* [[Interactive] Human Voice Navigation](Examples/Interactive/HumanVoiceNavigation) - Download a human voice from the MagicLane Online Store, calculate a route, simulate navigating on it and play the voice instructions with a miniaudio based sound player
 * [[Interactive] Markers](Examples/Interactive/Markers) - Show how to add icons with an image / polylines / polygons to the interactive map
 * [[Interactive] Multi Search](Examples/Interactive/MultiSearch) - Shows how to do a search on an interactive movable and zoomable map and flies to the first search result and also shows how to search for anything on the map with a free-form text query
 * [[Interactive] Reverse Geocoding](Examples/Interactive/ReverseGeocoding) - Show how to perform a reverse geocoding search to find the positions of points of interest (POIs) near a specified position on the map

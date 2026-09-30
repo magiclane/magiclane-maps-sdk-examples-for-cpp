@@ -102,7 +102,10 @@ namespace
         }
 
         auto dataSourceNMEA = gem::sense::DataSourceFactory::produceLog( srcNMEAPath );
-        dataSourceNMEA.get()->stop();
+        if( dataSourceNMEA )
+            dataSourceNMEA.get()->stop();
+        else
+            GEM_LOGE( "Cannot open the NMEA log %s", srcNMEAPath.toStdString().c_str() );
         gem::PositionService().setDataSource( dataSourceNMEA );
 
         return std::bind(
@@ -111,6 +114,12 @@ namespace
                 const ImGuiViewport* main_viewport = ImGui::GetMainViewport();
                 ImGui::SetNextWindowPos( ImVec2( main_viewport->WorkPos.x + 0, main_viewport->WorkPos.y + 20 ), ImGuiCond_FirstUseEver );
                 ImGui::Begin( "panel", nullptr, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoSavedSettings );
+                if( !dataSourceNMEA )
+                {
+                    ImGui::TextUnformatted( "NMEA log not found - set MAPS_SDK_EXAMPLES_PATH to the Maps-SDK-Examples-for-Cpp folder" );
+                    ImGui::End();
+                    return;
+                }
                 gem::RouteList routes;
                 auto navListener = gem::StrongPointerFactory<MyNavigationListener>();
                 ImGui::Spacing();

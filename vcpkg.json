@@ -25,10 +25,16 @@
                     "name": "sdl2"
                 },
                 {
-                    "name": "imgui"
+                    "name": "imgui",
+                    "features": [
+                        "freetype"
+                    ]
                 },
                 {
                     "name": "lvgl"
+                },
+                {
+                    "name": "miniaudio"
                 }
             ]
         },

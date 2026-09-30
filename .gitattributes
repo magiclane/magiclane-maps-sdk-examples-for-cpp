@@ -1,3 +1,7 @@
+# Normalize every committed text blob to LF regardless of each developer's
+# core.autocrlf setting. `eol=lf` takes precedence over core.autocrlf per
+# gitattributes(5); subsequent rules (below) override it on specific paths.
+
 * text=auto eol=lf
 
 *.patch -text

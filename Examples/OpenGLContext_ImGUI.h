@@ -11,7 +11,15 @@
 #include <imgui_impl_sdl2.h>
 #include <imgui_impl_opengl3.h>
 
+// FreeType rasterizer where ImGui is built with imgui_freetype: vcpkg imgui[freetype], the in-tree SDK build with FreeType,
+// the Visual Studio solution (ImGUI.lib; the examples link FreeType.lib)
+#if __has_include( <imgui_freetype.h> )
+    #include <imgui_freetype.h>
+    #define EXAMPLES_IMGUI_FREETYPE
+#endif
+
 #include "go_regular_ttf.h"
+#include "icons_solid_otf.h"
 
 // OpenGL context for SDL window system
 class OpenGLContext_ImGUI : public OpenGLContext_SDL
@@ -67,12 +75,31 @@ protected:
             0,
         };
 
-        if( ( io.Fonts->AddFontFromMemoryCompressedTTF( ( const void* ) goRegular_ttf_compressed_data, goRegular_ttf_compressed_size_bytes, 18, nullptr, kGlyphRanges ) ==
-              nullptr ) ||
-            ( io.Fonts->AddFontFromMemoryCompressedTTF( ( const void* ) goRegular_ttf_compressed_data, goRegular_ttf_compressed_size_bytes, 27, nullptr, kGlyphRanges ) ==
-              nullptr ) ||
-            ( io.Fonts->AddFontFromMemoryCompressedTTF( ( const void* ) goRegular_ttf_compressed_data, goRegular_ttf_compressed_size_bytes, 36, nullptr, kGlyphRanges ) ==
-              nullptr ) )
+        // The icons (Icons.h) use the Unicode private use area: only the glyphs present in the icon font are added
+        static const ImWchar kIconRanges[] = { 0xE000, 0xF8FF, 0 };
+        auto addFont = [&io]( float size )
+        {
+            if( !io.Fonts->AddFontFromMemoryCompressedTTF( ( const void* ) goRegular_ttf_compressed_data, goRegular_ttf_compressed_size_bytes, size, nullptr, kGlyphRanges ) )
+                return false;
+            ImFontConfig icons;
+            icons.MergeMode = true;
+            icons.PixelSnapH = true;
+            icons.GlyphMinAdvanceX = size * 1.25f; // same width for all icons (Font Awesome fixed width)
+            return io.Fonts->AddFontFromMemoryCompressedTTF( iconsSolid_otf_compressed_data, iconsSolid_otf_compressed_size, size, &icons, kIconRanges ) != nullptr;
+        };
+
+#ifdef EXAMPLES_IMGUI_FREETYPE
+        // FreeType rasterizer (also where ImGui defaults to stb_truetype): light hinting keeps small text crisp on low
+        // resolution (embedded) displays. Set before adding the fonts: ImGui 1.92 reads it in AddFont.
+    #if IMGUI_VERSION_NUM >= 19200 // renamed in 1.92
+        io.Fonts->SetFontLoader( ImGuiFreeType::GetFontLoader() );
+        io.Fonts->FontLoaderFlags = ImGuiFreeTypeLoaderFlags_LightHinting;
+    #else
+        io.Fonts->FontBuilderIO = ImGuiFreeType::GetBuilderForFreeType();
+        io.Fonts->FontBuilderFlags = ImGuiFreeTypeBuilderFlags_LightHinting;
+    #endif
+#endif
+        if( !addFont( 18 ) || !addFont( 27 ) || !addFont( 36 ) )
             return false;
         io.FontDefault = io.Fonts->Fonts[0];
 
@@ -268,6 +295,10 @@ protected:
         }
 
         ImGui_ImplSDL2_ProcessEvent( &event );
+
+        // Quit and window events are never consumed
+        if( event.type == SDL_QUIT || event.type == SDL_WINDOWEVENT )
+            return false;
 
         ImGuiIO& io = ImGui::GetIO();
 

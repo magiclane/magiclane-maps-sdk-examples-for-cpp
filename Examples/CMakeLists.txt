@@ -291,12 +291,14 @@ set(BUILD_APPS
 
 if(NOT USE_GLFW)
     list(APPEND BUILD_APPS
+        ActivationModes
         CalculateRoute
         ChangeMapStyle
         ContentDownload
         ExportTrack
         GpxNmeaPlayback
         GpxRoutingSimulation
+        HumanVoiceNavigation
         Markers
         MultiSearch
         SaveGPX
@@ -335,6 +337,22 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/SetupExampleTarget.cmake)
 foreach(exampleApp IN LISTS BUILD_APPS)
     setup_example_target(${exampleApp})
 endforeach()
+
+if(TARGET HumanVoiceNavigation)
+    find_path(MINIAUDIO_INCLUDE_DIR miniaudio.h REQUIRED)
+    target_include_directories(HumanVoiceNavigation PRIVATE ${MINIAUDIO_INCLUDE_DIR})
+endif()
+
+# ActivationModes renders the offline activation request blob as a QR code for the Magic Lane companion app.
+if(TARGET ActivationModes)
+    find_package(nayuki-qr-code-generator CONFIG QUIET)
+    if(nayuki-qr-code-generator_FOUND)
+        target_link_libraries(ActivationModes PRIVATE nayuki-qr-code-generator::nayuki-qr-code-generator)
+        target_compile_definitions(ActivationModes PRIVATE HAVE_QRCODEGEN)
+    else()
+        message(STATUS "nayuki-qr-code-generator not found - ActivationModes builds without QR rendering")
+    endif()
+endif()
 
 add_custom_target(AllExamples)
 if(IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/Internal")

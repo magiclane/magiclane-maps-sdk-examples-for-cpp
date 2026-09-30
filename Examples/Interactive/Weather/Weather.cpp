@@ -10,6 +10,7 @@
 #include <API/GEM_Weather.h>
 #include <API/GEM_Debug.h>
 
+#include <ctime>
 #include <sstream>
 #include <imgui.h>
 
@@ -17,9 +18,35 @@
 
 // Derive from the standard touch event handler class which makes the map view interactive
 
+// Sunrise and sunset are UTC timestamps (seconds since 1970): show them as a time of day.
+static std::string FormatParameterValue( const gem::weather::Parameter& parameter )
+{
+    const std::string type = parameter.type.toStdString();
+    if( type == "Sunrise" || type == "Sunset" )
+    {
+        const std::time_t time = static_cast<std::time_t>( parameter.value );
+        std::tm utc {};
+#if defined( _WIN32 )
+        gmtime_s( &utc, &time );
+#else
+        gmtime_r( &time, &utc );
+#endif
+        char text[16];
+        std::strftime( text, sizeof( text ), "%H:%M UTC", &utc );
+        return text;
+    }
+    std::ostringstream stream;
+    stream << parameter.value;
+    return stream.str();
+}
+
 class MyTouchEventListener : public CTouchEventListener
 {
 private:
+    // Screen rectangles (left, top, right, bottom) of the ImGui windows drawn in the last frame, see handleTouchEvent()
+    std::vector<ImVec4> m_uiRects;
+    bool m_pressOnUi = false;
+
     std::vector<std::string> strvecCurrent;
     std::vector<std::string> strvecHourly;
     std::vector<std::string> strvecDaily;
@@ -72,6 +99,27 @@ public:
         return renderMenu;
     }
 
+    void clearUiRects()
+    {
+        m_uiRects.clear();
+    }
+
+    // Call between ImGui::Begin() and ImGui::End(): remembers the rectangle of the current window.
+    void addUiRect()
+    {
+        const ImVec2 pos = ImGui::GetWindowPos();
+        const ImVec2 size = ImGui::GetWindowSize();
+        m_uiRects.push_back( ImVec4( pos.x, pos.y, pos.x + size.x, pos.y + size.y ) );
+    }
+
+    bool isOverUi( int x, int y ) const
+    {
+        for( const auto& r : m_uiRects )
+            if( x >= r.x && x < r.z && y >= r.y && y < r.w )
+                return true;
+        return false;
+    }
+
     // This function from the standard touch event handler for the map view is
     // overridden to add our own processing - enabling drawing a route by dragging
     // after a single or double click on the map.
@@ -86,6 +134,18 @@ public:
             GEM_LOGE( "null mapView!" );
             return;
         }
+        // A press on one of the ImGui windows belongs to the UI, not to the map. ImGui's WantCaptureMouse (which filters the
+        // events) is updated one frame late: a tap without prior hover (touch screen) would also reach the map and request
+        // the weather at the button's position.
+        if( eventType == gem::ETouchEvent::TE_Down )
+            m_pressOnUi = isOverUi( x, y );
+        if( m_pressOnUi )
+        {
+            if( eventType == gem::ETouchEvent::TE_Up )
+                m_pressOnUi = false;
+            return;
+        }
+
         mapView->getScreen()->handleTouchEvent( ( gem::ETouchEvent ) eventType, pointerId, mousePos );
 
         // Distinguish a clean click from a map pan: the weather is fetched only on a
@@ -168,9 +228,8 @@ public:
                               << ( std::string( "°" ) == e.unit.toStdString() ? "degrees"
                                    : std::string( "°C" ) == e.unit.toStdString()
                                        ? "deg C"
-                                       //: std::string("Sunrise") == e.unit.toStdString() || std::string("Sunset") == e.unit.toStdString() ? e.value.
                                        : e.unit.toStdString().c_str() )
-                              << " " << e.value;
+                              << " " << FormatParameterValue( e );
                     strvecCurrent.push_back( strstream.str() );
                     index++;
                 }
@@ -205,7 +264,7 @@ public:
                               << ( std::string( "°" ) == e.unit.toStdString()    ? "degrees"
                                    : std::string( "°C" ) == e.unit.toStdString() ? "deg C"
                                                                                  : e.unit.toStdString().c_str() )
-                              << " " << e.value;
+                              << " " << FormatParameterValue( e );
                     strvecHourly.push_back( strstream.str() );
                     index++;
                 }
@@ -237,7 +296,7 @@ public:
                               << ( std::string( "°" ) == e.unit.toStdString()    ? "degrees"
                                    : std::string( "°C" ) == e.unit.toStdString() ? "deg C"
                                                                                  : e.unit.toStdString().c_str() )
-                              << " " << e.value;
+                              << " " << FormatParameterValue( e );
                     strvecDaily.push_back( strstream.str() );
                     index++;
                 }
@@ -259,6 +318,8 @@ namespace
         return std::bind(
             [&touchEventListener]( gem::StrongPointer<gem::MapView> mapView )
             {
+                touchEventListener.clearUiRects();
+
                 // Selected weather panel (chosen via the menu buttons).
                 static auto weatherType = MyTouchEventListener::WeatherType::None;
 
@@ -280,6 +341,7 @@ namespace
                     ImGui::Begin( "panel_hint", nullptr,
                                   ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoSavedSettings );
                     ImGui::TextUnformatted( "Click on the map to get the weather at that position." );
+                    touchEventListener.addUiRect();
                     ImGui::End();
                 }
 
@@ -314,6 +376,7 @@ namespace
                         touchEventListener.setRenderMenu( false );
                         panelGeneration++; // next panel gets a fresh window - see panelGeneration
                     }
+                    touchEventListener.addUiRect();
                     ImGui::End();
                 }
                 if( touchEventListener.getRenderPanel() )
@@ -366,6 +429,7 @@ namespace
                                 }
                                 ImGui::EndTable();
                             }
+                            touchEventListener.addUiRect();
                             ImGui::End();
                             break;
                         }
@@ -408,6 +472,7 @@ namespace
                                 }
                                 ImGui::EndTable();
                             }
+                            touchEventListener.addUiRect();
                             ImGui::End();
                             break;
                         }
@@ -450,6 +515,7 @@ namespace
                                 }
                                 ImGui::EndTable();
                             }
+                            touchEventListener.addUiRect();
                             ImGui::End();
                             break;
                         }
@@ -467,6 +533,7 @@ namespace
                                     ImGui::Text( "%s", s.c_str() );
                                     break;
                                 }
+                                touchEventListener.addUiRect();
                                 ImGui::End();
                             }
                             break;

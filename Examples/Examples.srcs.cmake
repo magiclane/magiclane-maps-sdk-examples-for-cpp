@@ -8,6 +8,8 @@ set(EXAMPLES_COMMON_HDRS
 	${CMAKE_CURRENT_SOURCE_DIR}/BitmapImpl.h
 	${CMAKE_CURRENT_SOURCE_DIR}/Environment.h
 	${CMAKE_CURRENT_SOURCE_DIR}/go_regular_ttf.h
+	${CMAKE_CURRENT_SOURCE_DIR}/Icons.h
+	${CMAKE_CURRENT_SOURCE_DIR}/icons_solid_otf.h
 	${CMAKE_CURRENT_SOURCE_DIR}/Listeners.h
 	${CMAKE_CURRENT_SOURCE_DIR}/LvglTheme.h
 	${CMAKE_CURRENT_SOURCE_DIR}/OpenGLContext.h
@@ -48,6 +50,8 @@ set(PolygonMarker_SRCS
 set(PolylineMarker_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/3DScene/PolylineMarker/PolylineMarker.cpp)
 
+set(ActivationModes_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/ActivationModes/ActivationModes.cpp)
 set(CalculateRoute_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/CalculateRoute/CalculateRoute.cpp)
 set(ChangeMapStyle_SRCS
@@ -60,6 +64,8 @@ set(GpxNmeaPlayback_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/GpxNmeaPlayback/GpxNmeaPlayback.cpp)
 set(GpxRoutingSimulation_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/GpxRoutingSimulation/GpxRoutingSimulation.cpp)
+set(HumanVoiceNavigation_SRCS
+	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/HumanVoiceNavigation/HumanVoiceNavigation.cpp)
 set(Markers_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/Interactive/Markers/Markers.cpp)
 set(MultiSearch_SRCS

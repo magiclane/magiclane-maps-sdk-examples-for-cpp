@@ -30,6 +30,18 @@ class SdkExceptionsImpl : public gem::ISdkExceptions
 {
 public:
     void onSdkActivationAboutToExpire( gem::ESdkActivationAboutToExpireReason /*reason*/, gem::LargeInteger /*remainingTimeInSeconds*/ ) override {}
+
+    // Auto-activation SDKs report their activation state here; forward to whatever the running example registered
+    // (see Environment::SetActivationStateCallbacks). No-op unless an example opted in.
+    void onSdkNotActivated( gem::ESdkNotActivatedReason reason ) override
+    {
+        Environment::GetInstance().NotifySdkNotActivated( reason );
+    }
+
+    void onSdkActivated() override
+    {
+        Environment::GetInstance().NotifySdkActivated();
+    }
 };
 
 Environment::Environment() {}
@@ -90,6 +102,8 @@ void Environment::InitSDK( std::string token, std::string logFilePath, std::stri
     {
         if( nErr != gem::error::KExist )
         {
+            if( nErr == gem::error::KResourceMissing )
+                std::printf( "SDK resources incomplete in %s (e.g. no world map Data/Res/WM_*.map): re-extract the SDK archive\n", resPath.c_str() );
             delete m_timer;
             m_timer = nullptr;
             GEM_ERROR_NOEXCEPT( nErr );
@@ -422,12 +436,13 @@ std::string Environment::GetSDKExamplesPath()
         std::size_t nSlash = execPathStd.find_last_of( "/" );
         std::string execName = execPathStd.substr( nSlash + 1, execPathStd.length() );
 
-        std::string possiblePaths[1] = { execPathStd.substr( 0, nSlash ) + "/../../Examples/Maps-SDK-Examples-for-Cpp" };
+        const std::string execDir = execPathStd.substr( 0, nSlash );
+        std::string possiblePaths[2] = { execDir + "/../../Examples/Maps-SDK-Examples-for-Cpp", execDir + "/../../../.." };
 
         char dataPathC[FILENAME_MAX];
 
         for( auto& path : possiblePaths )
-            if( realpath( path.c_str(), dataPathC ) )
+            if( realpath( path.c_str(), dataPathC ) && std::filesystem::is_directory( std::string( dataPathC ) + "/Examples" ) )
                 return dataPathC;
     }
 
